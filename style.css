@@ -1,92 +1,78 @@
-/* إعدادات أساسية */
-* {
-    box-sizing: border-box;
-}
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
     color: #333;
-    margin: 0;
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 100px auto 50px;
-    padding: 0 20px;
+.main-wrapper {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
 }
 
-/* القائمة العلوية */
+/* Navbar [cite: 44, 45, 60] */
 .navbar {
-    background-color: #fcfcfc;
-    border-bottom: 1px solid #ddd;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: #ffffff;
+    border-bottom: 2px solid #0056b3;
     position: fixed;
     top: 0; width: 100%; z-index: 1000;
+    padding: 10px 0;
 }
 
-.nav-links {
-    list-style: none; display: flex; gap: 20px; margin: 0;
+.nav-container {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1100px; margin: 0 auto; padding: 0 20px;
 }
 
-.nav-links a {
-    text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 14px;
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: #0056b3; font-weight: 600; }
+
+/* Header [cite: 60] */
+.header-section {
+    background: #fff; padding: 40px; border-radius: 12px;
+    text-align: center; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* ترويسة الصفحة */
-.page-header {
-    text-align: center; margin-bottom: 40px; border-bottom: 3px solid #2c3e50; padding-bottom: 20px;
+.course-highlight { margin-top: 15px; display: flex; justify-content: center; gap: 30px; color: #666; }
+
+/* Cards [cite: 42, 60] */
+.card {
+    background: #fff; padding: 30px; margin-bottom: 30px;
+    border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.header-logo { width: 80px; margin-bottom: 10px; }
-
-/* صناديق الأقسام */
-.section-box {
-    background: #fff; padding: 25px; margin-bottom: 30px; border: 1px solid #eee; border-radius: 8px;
+.card-title {
+    color: #0056b3; border-bottom: 2px solid #eee;
+    padding-bottom: 10px; margin-bottom: 20px; font-size: 22px;
 }
 
-.section-title {
-    background: #2c3e50; color: #fff; padding: 10px 15px; border-radius: 5px; font-size: 18px; margin-top: 0;
-}
-
-/* الجداول */
-.main-table {
+/* Tables [cite: 49, 53, 60] */
+.data-table {
     width: 100%; border-collapse: collapse; margin-top: 20px;
 }
 
-.main-table th, .main-table td {
-    border: 1px solid #ddd; padding: 12px; text-align: left;
+.data-table th, .data-table td {
+    padding: 15px; border: 1px solid #e1e4e8; text-align: left;
 }
 
-.main-table th { background-color: #f8f9fa; }
+.data-table th { background-color: #f8f9fa; color: #0056b3; font-weight: bold; }
 
-/* القوائم */
-.content-list { list-style: none; padding: 0; }
-.content-list li {
-    padding: 10px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;
-}
-.content-list li span {
-    background: #2c3e50; color: #fff; width: 25px; height: 25px; 
-    border-radius: 50%; display: flex; justify-content: center; 
-    align-items: center; margin-right: 15px; font-size: 12px;
-}
+/* Lists [cite: 51] */
+.topics-list { padding-left: 20px; }
+.topics-list li { margin-bottom: 10px; padding-left: 10px; }
 
-/* المراجع */
-.ref-item { display: flex; gap: 20px; margin-top: 20px; align-items: center; }
-.ref-item img { width: 80px; border: 1px solid #ddd; }
-.buy-btn {
-    display: inline-block; background: #28a745; color: #fff; 
-    padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 13px; margin-top: 10px;
-}
+/* References [cite: 56] */
+.ref-item { display: flex; align-items: center; gap: 25px; padding: 15px; background: #fafafa; border-radius: 8px; }
+.book-cover { width: 90px; border: 1px solid #ddd; border-radius: 4px; }
+.buy-link { color: #28a745; text-decoration: none; font-weight: bold; }
 
-/* التجاوب مع الجوال */
+/* Responsive [cite: 60] */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; position: static; }
-    .nav-links { flex-direction: column; gap: 10px; text-align: center; padding: 10px 0; }
-    .container { margin-top: 20px; }
-    .ref-item { flex-direction: column; text-align: center; }
+    .nav-links { display: none; } /* يفضل عمل قائمة جوال لاحقاً */
+    .info-grid { grid-template-columns: 1fr; }
+    .header-section { padding: 20px; }
 }
