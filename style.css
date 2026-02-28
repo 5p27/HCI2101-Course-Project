@@ -1,4 +1,4 @@
-/* الألوان والإعدادات العامة */
+/* الإعدادات الأساسية */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,7 +7,7 @@
     --border: #ddd;
 }
 
-/* كلاس الوضع الداكن (Dark Mode) - يُفعل يدوياً في صفحات الداكن */
+/* كلاس الوضع الداكن - للتبديل بين الصفحات */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -16,40 +16,77 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; transition: 0.3s; }
 
-/* الشريط المستطيلي العلوي (Navbar) */
-.top-bar {
-    position: fixed; top: 0; left: 0; width: 100%;
-    background-color: var(--primary); color: white;
-    padding: 15px 30px; display: flex;
-    justify-content: space-between; align-items: center;
-    z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6; 
+    padding-top: 80px; /* مسافة عشان الشريط العلوي */
 }
 
-.top-bar .nav-links a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; }
+/* الشريط العلوي المستطيلي (Navbar) */
+.top-bar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.top-bar .brand { font-weight: bold; font-size: 1.2rem; }
+.top-bar .nav-links a { color: white; text-decoration: none; margin: 0 10px; font-weight: 500; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); padding: 5px 10px; border-radius: 4px; }
 
 /* الحاوية الرئيسية */
 .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-/* الهيدر المرتب مع صورة الهيئة */
+/* الهيدر المرتب (الذي سيعوض غياب الصورة) */
 .header-card {
-    background: var(--card); padding: 30px; border-radius: 8px;
-    border: 1px solid var(--border); margin-bottom: 25px; text-align: center;
+    background: var(--card);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.etec-logo { max-width: 400px; height: auto; margin-bottom: 20px; }
+/* أيقونة تعويضية لشعار الهيئة */
+.etec-placeholder {
+    font-size: 50px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.header-card h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
+.header-card p { font-size: 1.1rem; color: #666; }
+.header-divider { border: 0; height: 1px; background: var(--border); margin: 20px auto; width: 50%; }
 
 /* الكروت والجداول */
-.card { background: var(--card); padding: 25px; margin-bottom: 25px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.card h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
+.card { 
+    background: var(--card); 
+    padding: 30px; 
+    margin-bottom: 25px; 
+    border-radius: 8px; 
+    border-left: 5px solid var(--primary);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
 
-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.card-title { color: var(--primary); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
 table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
 [dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
-table th { background: var(--primary); color: white; }
+table th { background-color: var(--primary); color: white; }
 
-/* أيقونة إمكانية الوصول (Accessibility Icon) */
+/* أيقونة إمكانية الوصول */
 .accessibility-icon {
     position: fixed; bottom: 30px; right: 30px;
     background-color: var(--primary); color: white;
@@ -58,9 +95,3 @@ table th { background: var(--primary); color: white; }
     font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 [dir="rtl"] .accessibility-icon { right: auto; left: 30px; }
-
-/* التجاوب مع الجوال */
-@media (max-width: 768px) {
-    .top-bar { flex-direction: column; padding: 10px; }
-    table { display: block; overflow-x: auto; }
-}
