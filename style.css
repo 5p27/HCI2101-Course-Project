@@ -1,230 +1,60 @@
-/* =========================================
-   إعدادات الألوان والمتغيرات
-   ========================================= */
+/* الألوان والمتغيرات */
 :root {
-    --primary-color: #0056b3;
-    --secondary-color: #003d80;
-    --bg-color: #f4f7f6;
-    --card-bg: #ffffff;
-    --text-color: #333333;
-    --text-muted: #666666;
-    --border-color: #dddddd;
-    --white: #ffffff;
+    --primary: #0056b3;
+    --bg: #f4f7f6;
+    --card: #ffffff;
+    --text: #333;
+    --border: #ddd;
 }
 
 /* كلاس الوضع الداكن */
 .dark-mode {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --text-muted: #aaaaaa;
-    --border-color: #333333;
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #e0e0e0;
+    --border: #333;
 }
 
-/* =========================================
-   التنسيقات العامة
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+
+/* الشريط العلوي المستطيلي (Navbar) - حسب صورة image_11d0c0 */
+.top-navbar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background-color: var(--primary); color: white;
+    padding: 10px 30px; display: flex;
+    justify-content: space-between; align-items: center;
+    z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.8;
-    padding-top: 80px; /* لإعطاء مساحة للشريط العلوي الثابت */
+.nav-links { list-style: none; display: flex; gap: 15px; }
+.nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: bold; }
+
+/* الهيدر المرتب مع صورة الهيئة - حسب صورة image_123d98 */
+.header-container {
+    background: var(--card); padding: 40px; border-radius: 8px;
+    border: 1px solid var(--border); margin-bottom: 30px; text-align: center;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
+.etec-logo-img { max-width: 450px; height: auto; margin-bottom: 20px; }
 
-/* =========================================
-   الشريط العلوي المستطيلي (Navbar)
-   ========================================= */
-.top-nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 0 30px;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+.header-container h1 { color: var(--primary); font-size: 2.2rem; margin: 15px 0; border-top: 1px solid var(--border); padding-top: 15px; }
 
-.nav-brand {
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+/* الكروت والجداول - حسب صورة image_125ac8 */
+.info-card { background: var(--card); padding: 30px; margin-bottom: 25px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.info-card h2 { color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
 
-.nav-links {
-    display: flex;
-    gap: 15px;
-}
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+[dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
+table th { background-color: var(--primary); color: white; }
 
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 5px;
-    transition: 0.3s;
+/* أيقونة إمكانية الوصول */
+.accessibility-icon {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--primary); color: white;
+    width: 65px; height: 65px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
-.nav-links a:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
-}
-
-/* =========================================
-   الهيدر (بديل صورة الهيئة)
-   ========================================= */
-.header-main {
-    background: var(--card-bg);
-    padding: 50px 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 30px;
-    text-align: center;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-}
-
-.etec-icon {
-    font-size: 60px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.header-main h1 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.header-main p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-}
-
-.divider-line {
-    width: 150px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 25px auto;
-    border-radius: 2px;
-}
-
-/* =========================================
-   الكروت والمحتوى
-   ========================================= */
-.info-card {
-    background: var(--card-bg);
-    padding: 35px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    border-left: 6px solid var(--primary-color);
-}
-
-.info-card h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.info-card p {
-    margin-bottom: 12px;
-}
-
-/* =========================================
-   تنسيق الجداول
-   ========================================= */
-.table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card-bg);
-}
-
-table th, table td {
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    text-align: left;
-}
-
-[dir="rtl"] table th, [dir="rtl"] table td {
-    text-align: right;
-}
-
-table th {
-    background-color: var(--primary-color);
-    color: var(--white);
-    font-weight: 600;
-}
-
-table tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.02);
-}
-
-/* =========================================
-   أيقونة إمكانية الوصول الثابتة
-   ========================================= */
-.accessibility-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 65px;
-    height: 65px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 1000;
-}
-
-[dir="rtl"] .accessibility-btn {
-    right: auto;
-    left: 30px;
-}
-
-/* =========================================
-   التجاوب (Responsive)
-   ========================================= */
-@media (max-width: 768px) {
-    .top-nav-bar {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-    }
-    .nav-links {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
+[dir="rtl"] .accessibility-icon { right: auto; left: 30px; }
