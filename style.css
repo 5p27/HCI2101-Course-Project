@@ -1,4 +1,4 @@
-/* الألوان والإعدادات */
+/* الألوان والإعدادات العامة */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,7 +7,7 @@
     --border: #ddd;
 }
 
-/* كلاس الوضع الداكن - يُفعل في صفحات الـ Dark */
+/* كلاس الوضع الداكن (Dark Mode) - يُفعل يدوياً في صفحات الداكن */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -16,10 +16,10 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; transition: 0.3s; }
 
-/* الشريط العلوي المستطيلي (Navbar) - ثابت */
-.top-nav {
+/* الشريط المستطيلي العلوي (Navbar) */
+.top-bar {
     position: fixed; top: 0; left: 0; width: 100%;
     background-color: var(--primary); color: white;
     padding: 15px 30px; display: flex;
@@ -27,18 +27,18 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg);
     z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.top-nav .nav-links a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; }
+.top-bar .nav-links a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; }
 
 /* الحاوية الرئيسية */
-.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-/* هيدر الصفحة مع صورة الهيئة */
+/* الهيدر المرتب مع صورة الهيئة */
 .header-card {
     background: var(--card); padding: 30px; border-radius: 8px;
     border: 1px solid var(--border); margin-bottom: 25px; text-align: center;
 }
 
-.etec-logo { max-width: 400px; height: auto; margin-bottom: 15px; }
+.etec-logo { max-width: 400px; height: auto; margin-bottom: 20px; }
 
 /* الكروت والجداول */
 .card { background: var(--card); padding: 25px; margin-bottom: 25px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
@@ -49,19 +49,18 @@ table th, table td { border: 1px solid var(--border); padding: 12px; text-align:
 [dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
 table th { background: var(--primary); color: white; }
 
-/* أيقونة إمكانية الوصول */
+/* أيقونة إمكانية الوصول (Accessibility Icon) */
 .accessibility-icon {
     position: fixed; bottom: 30px; right: 30px;
-    background: var(--primary); color: white;
+    background-color: var(--primary); color: white;
     width: 60px; height: 60px; border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
     font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 [dir="rtl"] .accessibility-icon { right: auto; left: 30px; }
 
-/* انسيابية الجوال */
+/* التجاوب مع الجوال */
 @media (max-width: 768px) {
-    .top-nav { flex-direction: column; padding: 10px; }
-    .nav-links { margin-top: 10px; font-size: 12px; }
+    .top-bar { flex-direction: column; padding: 10px; }
     table { display: block; overflow-x: auto; }
 }
