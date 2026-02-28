@@ -1,4 +1,4 @@
-/* الإعدادات العامة والمتغيرات */
+/* الألوان والمتغيرات */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,7 +7,7 @@
     --border: #ddd;
 }
 
-/* كلاس الوضع الداكن - مطلوب للملفات الـ Dark */
+/* إعدادات الوضع الداكن (Dark Mode) */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -21,10 +21,10 @@ body {
     background-color: var(--bg); 
     color: var(--text); 
     line-height: 1.6; 
-    padding-top: 80px; /* مسافة للشريط العلوي الثابت */
+    padding-top: 80px; /* مسافة للشريط العلوي */
 }
 
-/* الشريط العلوي المستطيلي (Navbar) */
+/* الشريط المستطيلي العلوي (Top Navigation) */
 .top-navbar {
     position: fixed; top: 0; left: 0; width: 100%;
     background-color: var(--primary); color: white;
@@ -33,33 +33,36 @@ body {
     z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.nav-links { list-style: none; display: flex; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 4px; }
+.top-navbar .nav-links a { 
+    color: white; text-decoration: none; margin: 0 10px; 
+    font-weight: bold; border: 1px solid rgba(255,255,255,0.3); 
+    padding: 5px 12px; border-radius: 4px; 
+}
 
 /* الهيدر المرتب (بديل الصورة) */
 .header-main {
     background: var(--card); padding: 40px; border-radius: 8px;
     border: 1px solid var(--border); margin-bottom: 30px; text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.header-icon { font-size: 50px; color: var(--primary); margin-bottom: 15px; }
-.header-main h1 { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+.header-main h1 { font-size: 1.8rem; color: var(--primary); margin-bottom: 10px; }
 .header-divider { border: 0; height: 2px; background: var(--primary); margin: 20px auto; width: 100px; }
 
 /* الحاوية والكروت */
 .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-.card { background: var(--card); padding: 30px; margin-bottom: 25px; border-radius: 12px; border: 1px solid var(--border); border-left: 6px solid var(--primary); }
-.card h2 { color: var(--primary); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.card { 
+    background: var(--card); padding: 30px; margin-bottom: 25px; 
+    border-radius: 12px; border: 1px solid var(--border); 
+    border-left: 6px solid var(--primary); 
+}
 
-/* الجداول */
-.table-wrapper { overflow-x: auto; margin-top: 15px; }
-table { width: 100%; border-collapse: collapse; background: var(--card); }
+/* الجداول (حسب الشروط) */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
 [dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
 table th { background-color: var(--primary); color: white; }
 
-/* أيقونة إمكانية الوصول */
+/* أيقونة إمكانية الوصول (Accessibility) */
 .accessibility-btn {
     position: fixed; bottom: 30px; right: 30px;
     background: var(--primary); color: white;
