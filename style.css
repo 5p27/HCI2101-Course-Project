@@ -1,136 +1,59 @@
-/* =========================================
-   القيم والمتغيرات - CSS Variables
-   ========================================= */
+/* الإعدادات العامة */
 :root {
-    --primary-blue: #0056b3;
-    --bg-color: #f4f7f6;
-    --card-white: #ffffff;
-    --text-dark: #333333;
-    --border: #dddddd;
-}
-
-/* الوضع الداكن - Dark Mode */
-.dark-mode {
-    --bg-color: #121212;
-    --card-white: #1e1e1e;
-    --text-dark: #e0e0e0;
-    --border: #333333;
+    --primary: #0056b3;
+    --bg: #f4f7f6;
+    --card: #ffffff;
+    --text: #333;
+    --border: #ddd;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 90px; }
 
-body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    line-height: 1.6;
-    padding-top: 80px; /* لموازنة الشريط العلوي */
-}
-
-/* =========================================
-   الشريط العلوي المستطيلي (Navbar)
-   ========================================= */
-.top-bar {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    background-color: var(--card-white);
-    border-bottom: 3px solid var(--primary-blue);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    height: 70px;
-    z-index: 1000;
+/* الشريط العلوي المستطيلي المرتب */
+.top-navbar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background-color: var(--card); border-bottom: 3px solid var(--primary);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 40px; height: 75px; z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-.brand-name { font-weight: bold; color: var(--primary-blue); font-size: 1.2rem; }
+.nav-brand { font-weight: bold; color: var(--primary); font-size: 1.3rem; }
 .nav-links { display: flex; gap: 20px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--primary-blue); font-weight: 600; font-size: 14px; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; }
 
-/* =========================================
-   الهيدر (Branding Section)
-   ========================================= */
-.header-card {
-    background: var(--card-white);
-    padding: 40px;
-    border-radius: 8px;
-    margin: 0 auto 30px;
-    max-width: 1100px;
-    border: 1px solid var(--border);
-}
-
-.flex-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.etec-side, .uqu-side { font-size: 12px; color: #555; line-height: 1.4; }
-.uqu-side { text-align: right; }
-
-.main-title {
-    text-align: center;
-    color: var(--primary-blue);
-    font-size: 2.2rem;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.sub-highlight {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* =========================================
-   الكروت والجداول (Sections)
-   ========================================= */
+/* الهيدر الموزع (Branding) */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-.card {
-    background: var(--card-white);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
+.header-card {
+    background: var(--card); padding: 40px; border-radius: 8px;
+    margin-bottom: 35px; border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+.branding-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; }
+.main-title { text-align: center; color: var(--primary); font-size: 2.2rem; margin: 25px 0; border-top: 1px solid #eee; padding-top: 20px; }
+.course-meta { text-align: center; font-weight: bold; display: flex; justify-content: center; gap: 30px; }
 
-.card h2 {
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f9f9f9;
-    padding-bottom: 10px;
-}
+/* الكروت والجداول */
+.content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
+.content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #f7f7f7; padding-bottom: 12px; }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+table th { background-color: var(--primary); color: white; }
 
-table th, table td {
-    border: 1px solid var(--border);
-    padding: 12px;
-    text-align: left;
-}
-
-[dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
-
-table th {
-    background-color: var(--primary-blue);
-    color: white;
-}
-
-/* أيقونة الوصول */
-.fab-access {
-    position: fixed; bottom: 30px; right: 30px;
-    background: var(--primary-blue); color: white;
-    width: 60px; height: 60px; border-radius: 50%;
+/* الدائرة الزرقاء (إمكانية الوصول) */
+.accessibility-fab {
+    position: fixed; bottom: 35px; right: 35px;
+    background: var(--primary); color: white;
+    width: 65px; height: 65px; border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
-    font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 28px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer; z-index: 2000;
 }
-[dir="rtl"] .fab-access { right: auto; left: 30px; }
+.access-menu {
+    display: none; position: fixed; bottom: 110px; right: 35px;
+    background: white; border: 2px solid var(--primary);
+    border-radius: 12px; padding: 15px; width: 220px; z-index: 1999;
+}
+#access-trigger:checked ~ .access-menu { display: block; }
+.access-menu button { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; background: #f9f9f9; }
