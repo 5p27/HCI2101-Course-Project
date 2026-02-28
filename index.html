@@ -3,171 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Specification | HCI 3401</title>
+    <title>HCI 3401 - Course Specification</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* إضافة تنسيق قائمة الوصول (الدائرة الزرقاء) لتعمل بدون JS */
+        .access-menu {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            border: 2px solid #0056b3;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            width: 200px;
+        }
+        #access-trigger:checked ~ .access-menu { display: block; }
+        .access-menu button {
+            display: block; width: 100%; margin: 5px 0;
+            padding: 8px; border: 1px solid #ddd; cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="top-navbar">
-        <div class="nav-brand">UQU - HCI 3401 Project</div>
+        <div class="nav-brand">UQU - HCI 3401</div>
         <ul class="nav-links">
-            <li><a href="index.html">English Light</a></li>
+            <li><a href="index.html">General Info</a></li>
+            <li><a href="#clos">CLOs</a></li>
+            <li><a href="#assessment">Assessment</a></li>
             <li><a href="ar-light.html">العربية</a></li>
             <li><a href="en-dark.html">Dark Mode</a></li>
-            <li><a href="team.html">About Team</a></li>
         </ul>
-        <div class="mode-indicator">Mode: Light / LTR</div>
+        <div class="mode-tag">English | Light Mode</div>
     </nav>
 
     <div class="container">
-        
-        <header class="header-main-card">
-            <div class="header-top-flex">
-                <div class="commission-info">
+        <header class="header-card">
+            <div class="branding-row">
+                <div class="etec-info">
                     <p>Kingdom of Saudi Arabia</p>
                     <p><strong>Education & Training Evaluation Commission</strong></p>
                     <p>National Center for Academic Accreditation and Evaluation</p>
                 </div>
-                <div class="university-info">
-                    <p>Umm Al-Qura University</p>
+                <div class="uqu-info" style="text-align: right;">
+                    <p>Umm Al Qura University</p>
                     <p>College of Computing</p>
                     <p>Software Engineering Department</p>
                 </div>
             </div>
-            <div class="header-separator"></div>
-            <h1 class="main-doc-title">Course Specification</h1>
-            <div class="course-brief-row">
-                <p><strong>Course Title:</strong> Data Visualization Design</p>
-                <p><strong>Course Code:</strong> HCI 3401</p>
+            <hr class="separator">
+            <h1 class="main-title">Course Specification</h1>
+            <div class="course-meta">
+                <span><strong>Course Title:</strong> Data Visualization Design</span>
+                <span><strong>Course Code:</strong> HCI 3401</span>
             </div>
         </header>
 
-        <section class="content-section" id="general-info">
-            <h2>A. General Information About the Course</h2>
-            <div class="info-grid">
-                <p><strong>1. Credit Hours:</strong> (4) Hours (3 Lecture + 2 Lab)</p>
-                <p><strong>2. Course Type:</strong> Required (Department Requirement)</p>
-                <p><strong>3. Level/Year:</strong> 3rd Year / 5th Level</p>
-                <p><strong>4. Pre-requisites:</strong> User Research (HCI 2203) and Database (DS 2201)</p>
+        <section id="general" class="content-card">
+            <h2 class="section-heading">A. General Information About the Course</h2>
+            <div class="grid-info">
+                <p><strong>Program:</strong> BSc in Human Computer Interaction</p>
+                <p><strong>Credit Hours:</strong> 4 Hours (3 Lecture + 2 Lab)</p>
+                <p><strong>Level/Year:</strong> 3rd Year / 5th Level</p>
+                <p><strong>Course Type:</strong> Required (Department)</p>
             </div>
             <br>
-            <h3>Course General Description:</h3>
-            <p>
-                This course focuses on the principles and techniques of designing effective data visualizations 
-                within the context of Human-Computer Interaction (HCI). It covers visual perception, 
-                information theory, storytelling with data, and creating user-centered visual interfaces 
-                for complex datasets using modern visualization tools.
-            </p>
+            <h3>1. Course General Description:</h3>
+            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of Human-Computer Interaction (HCI). Students will learn how to represent complex data in intuitive, interactive, and aesthetically pleasing ways. Key topics include visual perception, cognition, storytelling with data, and the use of modern visualization tools to support user tasks and decision-making.</p>
+            <br>
+            <h3>2. Pre-requirements for this course:</h3>
+            <p>Introduction to HCI (HCI 2101)</p>
         </section>
 
-        <section class="content-section" id="learning-outcomes">
-            <h2>B. Course Learning Outcomes (CLOs)</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Course Learning Outcomes</th>
-                            <th>Teaching Strategy</th>
-                            <th>Assessment Method</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1.1</td>
-                            <td>Demonstrate knowledge of visual perception principles.</td>
-                            <td>Lectures / Case Studies</td>
-                            <td>Midterm & Final Exams</td>
-                        </tr>
-                        <tr>
-                            <td>2.1</td>
-                            <td>Design and implement interactive data visualizations.</td>
-                            <td>Lab Sessions / Projects</td>
-                            <td>Practical Assignments</td>
-                        </tr>
-                        <tr>
-                            <td>2.2</td>
-                            <td>Apply storytelling techniques to data presentation.</td>
-                            <td>Group Projects</td>
-                            <td>Presentations</td>
-                        </tr>
-                        <tr>
-                            <td>3.1</td>
-                            <td>Handle data ethically and professionally.</td>
-                            <td>Class Discussions</td>
-                            <td>Reports</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <section id="clos" class="content-card">
+            <h2 class="section-heading">B. Course Learning Outcomes (CLOs)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Course Learning Outcomes</th>
+                        <th>Teaching Strategies</th>
+                        <th>Assessment Methods</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.1</td>
+                        <td>Demonstrate knowledge of visual perception principles and information theory.</td>
+                        <td>Lectures, Case Studies</td>
+                        <td>Midterm & Final Exams</td>
+                    </tr>
+                    <tr>
+                        <td>2.1</td>
+                        <td>Apply modern visualization tools to create interactive dashboards.</td>
+                        <td>Lab Sessions, Projects</td>
+                        <td>Practical Tasks</td>
+                    </tr>
+                    <tr>
+                        <td>3.1</td>
+                        <td>Show responsibility in data handling and professional ethics.</td>
+                        <td>Discussions</td>
+                        <td>Project Presentation</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="content-section" id="course-content">
-            <h2>C. Course Content (Topics)</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>List of Topics</th>
-                            <th>Contact Hours</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Introduction to Data Visualization Design</td><td>4</td></tr>
-                        <tr><td>2</td><td>Human Perception and Information Theory</td><td>8</td></tr>
-                        <tr><td>3</td><td>Data Types and Visual Mapping</td><td>10</td></tr>
-                        <tr><td>4</td><td>Interaction Design for Visualizations</td><td>8</td></tr>
-                        <tr><td>5</td><td>Visualizing High-Dimensional Data</td><td>10</td></tr>
-                        <tr><td>6</td><td>Storytelling and Narrative Structures</td><td>8</td></tr>
-                        <tr><td>7</td><td>Evaluation of Visualization Interfaces</td><td>8</td></tr>
-                        <tr><td>8</td><td>Ethics and Privacy in Data Design</td><td>4</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <section id="content" class="content-card">
+            <h2 class="section-heading">C. Course Content</h2>
+            <table>
+                <thead>
+                    <tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Introduction to Data Visualization Principles</td><td>4</td></tr>
+                    <tr><td>2</td><td>The Human Visual System and Perception</td><td>8</td></tr>
+                    <li>3</td><td>Data Abstraction and Visual Mapping</td><td>12</td></tr>
+                    <tr><td>4</td><td>Design of Static and Interactive Visuals</td><td>12</td></tr>
+                    <tr><td>5</td><td>Storytelling with Data and Narratives</td><td>8</td></tr>
+                    <tr><td>6</td><td>Visualization Evaluation Techniques</td><td>8</td></tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="content-section" id="assessment">
-            <h2>D. Students Assessment Activities</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Assessment Activity</th>
-                            <th>Week Due</th>
-                            <th>Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Theoretical Assignments & Quizzes</td><td>3 to 14</td><td>10%</td></tr>
-                        <tr><td>2</td><td>Main Course Project (Group)</td><td>12</td><td>30%</td></tr>
-                        <tr><td>3</td><td>Midterm Examination</td><td>8</td><td>20%</td></tr>
-                        <tr><td>4</td><td>Final Examination</td><td>16</td><td>40%</td></tr>
-                        <tr><td><strong>Total</strong></td><td>-</td><td>-</td><td><strong>100%</strong></td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <section id="assessment" class="content-card">
+            <h2 class="section-heading">D. Students Assessment Activities</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Assessment Activity</th>
+                        <th>Timing (Week)</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Theoretical Assignments & Quizzes</td><td>3-14</td><td>10%</td></tr>
+                    <tr><td>2</td><td>Course Project (Group Design)</td><td>12</td><td>30%</td></tr>
+                    <tr><td>3</td><td>Midterm Examination</td><td>8</td><td>20%</td></tr>
+                    <tr><td>4</td><td>Final Examination</td><td>16</td><td>40%</td></tr>
+                    <tr><td><strong>Total</strong></td><td>-</td><td>-</td><td><strong>100%</strong></td></tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="content-section" id="resources">
-            <h2>E. Learning Resources and Facilities</h2>
+        <section id="resources" class="content-card">
+            <h2 class="section-heading">E. Learning Resources and Facilities</h2>
             <ul>
-                <li><strong>Required Textbooks:</strong> Interactive Data Visualization for the Web (Scott Murray).</li>
-                <li><strong>Reference Materials:</strong> The Visual Display of Quantitative Information (Edward Tufte).</li>
-                <li><strong>Electronic Materials:</strong> Tableau / PowerBI / D3.js documentation.</li>
+                <li><strong>Textbook:</strong> Interactive Data Visualization for the Web by Scott Murray.</li>
+                <li><strong>References:</strong> The Visual Display of Quantitative Information by Edward Tufte.</li>
+                <li><strong>Software:</strong> Tableau, PowerBI, and D3.js library.</li>
             </ul>
         </section>
-
     </div>
 
-    <div class="accessibility-fab" title="Accessibility Options">
+    <input type="checkbox" id="access-trigger" style="display:none;">
+    <label for="access-trigger" class="accessibility-fab">
         <i class="fas fa-universal-access"></i>
+    </label>
+    
+    <div class="access-menu">
+        <p style="font-weight:bold; border-bottom:1px solid #ddd; margin-bottom:10px;">Accessibility Options</p>
+        <button onclick="document.body.style.fontSize='120%'">Increase Font</button>
+        <button onclick="document.body.style.fontSize='100%'">Reset Font</button>
+        <button onclick="window.location.href='en-dark.html'">Contrast Mode</button>
     </div>
 
-    <footer style="text-align: center; padding: 20px; color: #777; font-size: 0.8rem;">
-        &copy; 2026 UQU HCI Project - Team Leader: Mohammed Shaker
+    <footer style="text-align:center; padding:20px; color:#999; font-size:12px;">
+        &copy; 2026 Umm Al Qura University - HCI Project Team
     </footer>
 
 </body>
