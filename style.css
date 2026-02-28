@@ -1,4 +1,4 @@
-/* الألوان والمتغيرات */
+/* الإعدادات العامة والمتغيرات */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,7 +7,7 @@
     --border: #ddd;
 }
 
-/* كلاس الوضع الداكن */
+/* كلاس الوضع الداكن - مطلوب للملفات الـ Dark */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -16,45 +16,55 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6; 
+    padding-top: 80px; /* مسافة للشريط العلوي الثابت */
+}
 
-/* الشريط العلوي المستطيلي (Navbar) - حسب صورة image_11d0c0 */
+/* الشريط العلوي المستطيلي (Navbar) */
 .top-navbar {
     position: fixed; top: 0; left: 0; width: 100%;
     background-color: var(--primary); color: white;
-    padding: 10px 30px; display: flex;
+    padding: 15px 30px; display: flex;
     justify-content: space-between; align-items: center;
     z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.nav-links { list-style: none; display: flex; gap: 15px; }
-.nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: bold; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 4px; }
 
-/* الهيدر المرتب مع صورة الهيئة - حسب صورة image_123d98 */
-.header-container {
+/* الهيدر المرتب (بديل الصورة) */
+.header-main {
     background: var(--card); padding: 40px; border-radius: 8px;
     border: 1px solid var(--border); margin-bottom: 30px; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.etec-logo-img { max-width: 450px; height: auto; margin-bottom: 20px; }
+.header-icon { font-size: 50px; color: var(--primary); margin-bottom: 15px; }
+.header-main h1 { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+.header-divider { border: 0; height: 2px; background: var(--primary); margin: 20px auto; width: 100px; }
 
-.header-container h1 { color: var(--primary); font-size: 2.2rem; margin: 15px 0; border-top: 1px solid var(--border); padding-top: 15px; }
+/* الحاوية والكروت */
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.card { background: var(--card); padding: 30px; margin-bottom: 25px; border-radius: 12px; border: 1px solid var(--border); border-left: 6px solid var(--primary); }
+.card h2 { color: var(--primary); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 
-/* الكروت والجداول - حسب صورة image_125ac8 */
-.info-card { background: var(--card); padding: 30px; margin-bottom: 25px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-.info-card h2 { color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
-
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+/* الجداول */
+.table-wrapper { overflow-x: auto; margin-top: 15px; }
+table { width: 100%; border-collapse: collapse; background: var(--card); }
+table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
 [dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
 table th { background-color: var(--primary); color: white; }
 
 /* أيقونة إمكانية الوصول */
-.accessibility-icon {
+.accessibility-btn {
     position: fixed; bottom: 30px; right: 30px;
     background: var(--primary); color: white;
-    width: 65px; height: 65px; border-radius: 50%;
+    width: 60px; height: 60px; border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
     font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-[dir="rtl"] .accessibility-icon { right: auto; left: 30px; }
+[dir="rtl"] .accessibility-btn { right: auto; left: 30px; }
