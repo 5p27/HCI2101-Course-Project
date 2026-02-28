@@ -1,4 +1,4 @@
-/* الإعدادات العامة */
+/* الألوان والإعدادات */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,6 +7,7 @@
     --border: #ddd;
 }
 
+/* كلاس الوضع الداكن - يُفعل في صفحات الـ Dark */
 .dark-mode {
     --bg: #121212;
     --card: #1e1e1e;
@@ -15,48 +16,52 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-.container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
 
-/* تعديل الهيدر ليكون مرتباً (يمين ويسار) */
-.header-section { 
-    background: var(--card); 
-    padding: 30px; 
-    border-radius: 8px; 
-    margin-bottom: 25px; 
-    border: 1px solid var(--border); 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+/* الشريط العلوي المستطيلي (Navbar) - ثابت */
+.top-nav {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background-color: var(--primary); color: white;
+    padding: 15px 30px; display: flex;
+    justify-content: space-between; align-items: center;
+    z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.branding-grid { 
-    display: flex; 
-    justify-content: space-between; /* هذا يخلي جهة يمين وجهة يسار */
-    align-items: flex-start;
-    margin-bottom: 20px;
+.top-nav .nav-links a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; }
+
+/* الحاوية الرئيسية */
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+/* هيدر الصفحة مع صورة الهيئة */
+.header-card {
+    background: var(--card); padding: 30px; border-radius: 8px;
+    border: 1px solid var(--border); margin-bottom: 25px; text-align: center;
 }
 
-.etec-info { text-align: left; font-size: 13px; }
-.uqu-info { text-align: right; font-size: 13px; }
-
-.header-divider { border: 0; height: 1px; background: var(--border); margin: 20px 0; }
-.header-section h1 { text-align: center; color: var(--primary); font-size: 28px; margin: 15px 0; }
-.course-highlight { text-align: center; font-weight: bold; color: var(--text); }
+.etec-logo { max-width: 400px; height: auto; margin-bottom: 15px; }
 
 /* الكروت والجداول */
-.card { background: var(--card); padding: 25px; margin-bottom: 25px; border-radius: 8px; border: 1px solid var(--border); }
-.card-title { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
+.card { background: var(--card); padding: 25px; margin-bottom: 25px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.card h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
 
-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
 [dir="rtl"] table th, [dir="rtl"] table td { text-align: right; }
 table th { background: var(--primary); color: white; }
 
-/* أيقونة الوصول */
+/* أيقونة إمكانية الوصول */
 .accessibility-icon {
     position: fixed; bottom: 30px; right: 30px;
     background: var(--primary); color: white;
     width: 60px; height: 60px; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center; font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex; justify-content: center; align-items: center;
+    font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 [dir="rtl"] .accessibility-icon { right: auto; left: 30px; }
+
+/* انسيابية الجوال */
+@media (max-width: 768px) {
+    .top-nav { flex-direction: column; padding: 10px; }
+    .nav-links { margin-top: 10px; font-size: 12px; }
+    table { display: block; overflow-x: auto; }
+}
