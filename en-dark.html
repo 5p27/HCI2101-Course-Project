@@ -13,9 +13,8 @@
         <div class="nav-brand">UQU - HCI 3401</div>
         <ul class="nav-links">
             <li><a href="index.html">Light Mode</a></li>
-            <li><a href="#general">General Info</a></li>
-            <li><a href="#assessment">Assessment</a></li>
-            <li><a href="ar-dark.html">العربية</a></li>
+            <li><a href="ar-dark.html" style="color: #d9534f;">العربية</a></li>
+            <li><a href="team.html">Team</a></li>
         </ul>
         <div class="mode-tag">English | Dark Mode</div>
     </nav>
@@ -23,12 +22,12 @@
     <div class="container">
         <header class="header-card">
             <div class="branding-row">
-                <div class="left-brand">
+                <div class="left-side">
                     <p>Kingdom of Saudi Arabia</p>
                     <p><strong>Education & Training Evaluation Commission</strong></p>
                     <p>National Center for Academic Accreditation and Evaluation</p>
                 </div>
-                <div class="right-brand" style="text-align: right;">
+                <div class="right-side" style="text-align: right;">
                     <p>Umm Al Qura University</p>
                     <p>College of Computing</p>
                     <p>Software Engineering Department</p>
@@ -44,14 +43,48 @@
         <section id="general" class="content-card">
             <h2>A. General Information About the Course</h2>
             <div style="margin-bottom: 20px;">
-                <p><strong>Program:</strong> BSc in Human Computer Interaction</p>
-                <p><strong>Credit Hours:</strong> 4 Hours</p>
-                <p><strong>Level/Year:</strong> 3rd Year / 5th Level</p>
-                <p><strong>Course Type:</strong> Required (Department)</p>
+                <p><strong>1. Credit Hours:</strong> 4 Hours</p>
+                <p><strong>2. Course Type:</strong> Required (Department)</p>
+                <p><strong>3. Level/Year:</strong> 3rd Year / 5th Level</p>
+                <p><strong>4. Pre-requirements:</strong> User Research (HCI 2203) & Database (DS 2201)</p>
             </div>
-            <br>
-            <h3>1. Course General Description:</h3>
-            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of Human-Computer Interaction (HCI). Key topics include visual perception, storytelling with data, and interactive visual interfaces.</p>
+            <h3>Course General Description:</h3>
+            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of HCI. It covers visual perception, storytelling with data, and interactive interfaces.</p>
+        </section>
+
+        <section id="clos" class="content-card">
+            <h2>B. Course Learning Outcomes (CLOs)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Learning Outcomes</th>
+                        <th>Teaching Strategies</th>
+                        <th>Assessment Methods</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1.1</td><td>Knowledge of visual perception principles</td><td>Lectures</td><td>Exams</td></tr>
+                    <tr><td>2.1</td><td>Design interactive visualization tools</td><td>Lab Sessions</td><td>Project</td></tr>
+                    <tr><td>3.1</td><td>Professional ethics in data handling</td><td>Discussions</td><td>Reports</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="content" class="content-card">
+            <h2>C. Course Content</h2>
+            <table>
+                <thead>
+                    <tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Introduction to Data Visualization Design</td><td>6</td></tr>
+                    <tr><td>2</td><td>Principles of Visual Perception</td><td>6</td></tr>
+                    <tr><td>3</td><td>Data Types and Visual Mapping</td><td>12</td></tr>
+                    <tr><td>4</td><td>Interaction and Storytelling</td><td>12</td></tr>
+                    <tr><td>5</td><td>Evaluation and Testing</td><td>6</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="assessment" class="content-card">
@@ -61,17 +94,28 @@
                     <tr>
                         <th>No</th>
                         <th>Assessment Activity</th>
-                        <th>Timing (Week)</th>
+                        <th>Week Due</th>
                         <th>Percentage</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr><td>1</td><td>Assignments & Quizzes</td><td>3 - 14</td><td>10%</td></tr>
                     <tr><td>2</td><td>Course Project</td><td>12</td><td>30%</td></tr>
-                    <tr><td>3</td><td>Midterm Examination</td><td>8</td><td>20%</td></tr>
-                    <tr><td>4</td><td>Final Examination</td><td>16 - 17</td><td>40%</td></tr>
+                    <tr><td>3</td><td>Midterm Exam</td><td>8</td><td>20%</td></tr>
+                    <tr><td>4</td><td>Final Exam</td><td>16</td><td>40%</td></tr>
                 </tbody>
             </table>
+        </section>
+
+        <section id="resources" class="content-card">
+            <h2>E. Learning Resources and Facilities</h2>
+            <p><strong>1. References:</strong> Interactive Data Visualization for the Web.</p>
+            <p><strong>2. Facilities:</strong> Computing Lab with Visualization Software (Tableau/D3.js).</p>
+        </section>
+
+        <section id="quality" class="content-card">
+            <h2>F. Assessment of Course Quality</h2>
+            <p>Quality is assessed through student feedback, peer review, and analysis of student performance.</p>
         </section>
     </div>
 
@@ -83,7 +127,7 @@
     <div class="access-menu">
         <p style="font-weight:bold; margin-bottom:10px; border-bottom:1px solid #444;">Accessibility Tools</p>
         <button onclick="document.body.style.fontSize='120%'">Increase Font</button>
-        <button onclick="document.body.style.fontSize='100%'">Normal Font</button>
+        <button onclick="document.body.style.fontSize='100%'">Reset Font</button>
         <button onclick="window.location.href='index.html'">Light Mode</button>
     </div>
 
