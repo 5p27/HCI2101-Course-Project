@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>توصيف مقرر (وضع داكن) - HCI 3401</title>
-    <link rel="stylesheet" href="style.css">
+    <title>توصيف المقرر (وضع داكن كامل) | HCI 3401</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* التنسيق المدمج لضمان عمل الدارك مود 100% */
+        :root {
+            --primary: #3b82f6; /* أزرق فاتح يناسب الداكن */
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e0e0e0;
+            --border: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+
+        /* الشريط العلوي المستطيلي (نفس الصورة) */
+        .top-navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: var(--card); border-bottom: 3px solid var(--primary);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; height: 75px; z-index: 1000;
+        }
+        .nav-brand { font-weight: bold; color: var(--primary); font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+        /* الهيدر الموزع (البراندينج) */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .header-card {
+            background: var(--card); padding: 40px; border-radius: 8px;
+            margin-bottom: 35px; border: 1px solid var(--border); text-align: center;
+        }
+        .branding-row { display: flex; justify-content: space-between; font-size: 0.8rem; color: #aaa; }
+        .main-title { color: var(--primary); font-size: 2.2rem; margin: 25px 0; border-top: 1px solid #333; padding-top: 20px; }
+        
+        /* الكروت والجداول */
+        .content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        .content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #333; padding-bottom: 12px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; color: var(--text); }
+        table th, table td { border: 1px solid var(--border); padding: 15px; text-align: right; }
+        table th { background-color: #252525; color: var(--primary); }
+
+        /* الدائرة الزرقاء */
+        .accessibility-fab {
+            position: fixed; bottom: 35px; left: 35px; /* يسار لأن الصفحة RTL */
+            background: var(--primary); color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 26px; cursor: pointer; z-index: 2000;
+        }
+    </style>
 </head>
-<body class="dark-mode" dir="rtl">
+<body class="dark-mode">
 
     <nav class="top-navbar">
         <div class="nav-brand">جامعة أم القرى - HCI 3401</div>
@@ -16,120 +65,97 @@
             <li><a href="index.html">English</a></li>
             <li><a href="team.html">الفريق</a></li>
         </ul>
-        <div class="mode-tag">العربية | الوضع الداكن</div>
+        <div style="font-size: 12px; font-weight: bold; color: #888;">العربية | الوضع الداكن</div>
     </nav>
 
     <div class="container">
         <header class="header-card">
             <div class="branding-row">
-                <div class="right-brand">
+                <div style="text-align: right;">
                     <p>المملكة العربية السعودية</p>
                     <p><strong>هيئة تقويم التعليم والتدريب</strong></p>
                     <p>المركز الوطني للتقويم والاعتماد الأكاديمي</p>
                 </div>
-                <div class="left-brand" style="text-align: left;">
+                <div style="text-align: left;">
                     <p>جامعة أم القرى</p>
-                    <p>كلية الحاسب الآلي ونظم المعلومات</p>
+                    <p>كلية الحاسب الآلي</p>
                     <p>قسم هندسة البرمجيات</p>
                 </div>
             </div>
             <h1 class="main-title">توصيف المقرر الدراسي</h1>
-            <div class="course-meta">
-                <span><strong>اسم المقرر:</strong> تصميم تصور البيانات</span>
-                <span><strong>رمز المقرر:</strong> HCI 3401</span>
-            </div>
+            <p><strong>اسم المقرر:</strong> تصميم تصور البيانات | <strong>رمز المقرر:</strong> HCI 3401</p>
         </header>
 
-        <section id="general" class="content-card">
+        <section class="content-card">
             <h2>أ. معلومات عامة عن المقرر</h2>
-            <div style="margin-bottom: 20px;">
-                <p><strong>1. الساعات المعتمدة:</strong> 4 ساعات</p>
-                <p><strong>2. نوع المقرر:</strong> إجباري (متطلب قسم)</p>
-                <p><strong>3. المستوى/السنة:</strong> السنة الثالثة / المستوى الخامس</p>
-                <p><strong>4. المتطلبات السابقة:</strong> أبحاث المستخدم (HCI 2203) وقواعد البيانات (DS 2201)</p>
-            </div>
-            <h3>وصف عام للمقرر:</h3>
-            <p>يركز هذا المقرر على مبادئ وتقنيات تصميم تصورات البيانات الفعالة في سياق تفاعل الإنسان مع الحاسب (HCI). ويتضمن المواضيع الرئيسية الإدراك البصري، ورواية القصص بالبيانات، وتصميم الواجهات البصرية التفاعلية.</p>
+            <p>1. الساعات المعتمدة: 4 ساعات (3 نظري + 2 عملي)</p>
+            <p>2. نوع المقرر: إجباري (متطلب قسم)</p>
+            <p>3. المستوى/السنة: السنة الثالثة / المستوى الخامس</p>
+            <p>4. المتطلبات السابقة: أبحاث المستخدم (HCI 2203) وقواعد البيانات (DS 2201)</p>
+            <p>5. المتطلبات المصاحبة: لا يوجد</p>
         </section>
 
-        <section id="clos" class="content-card">
+        <section class="content-card">
             <h2>ب. نواتج تعلم المقرر (CLOs)</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th>الرمز</th>
-                        <th>نواتج التعلم</th>
-                        <th>استراتيجيات التدريس</th>
-                        <th>طرق التقييم</th>
-                    </tr>
+                    <tr><th>الرمز</th><th>نواتج التعلم</th><th>استراتيجية التدريس</th><th>التقييم</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1.1</td><td>معرفة مبادئ الإدراك البصري</td><td>المحاضرات</td><td>الاختبارات</td></tr>
-                    <tr><td>2.1</td><td>تصميم أدوات تصور بيانات تفاعلية</td><td>جلسات المعمل</td><td>المشروع</td></tr>
-                    <tr><td>3.1</td><td>أخلاقيات التعامل مع البيانات</td><td>المناقشات</td><td>التقارير</td></tr>
+                    <tr><td>1.0</td><td><strong>المعرفة والفهم</strong></td><td></td><td></td></tr>
+                    <tr><td>1.1</td><td>وصف مبادئ الإدراك البصري ونظريات تفاعل الإنسان مع الحاسب.</td><td>المحاضرات</td><td>الاختبارات</td></tr>
+                    <tr><td>1.2</td><td>تحديد أنواع البيانات والمخططات البصرية المناسبة لكل نوع.</td><td>دراسة الحالات</td><td>الواجبات</td></tr>
+                    <tr><td>2.0</td><td><strong>المهارات</strong></td><td></td><td></td></tr>
+                    <tr><td>2.1</td><td>تطبيق الأدوات الحديثة لتصميم تصورات بيانات تفاعلية (Tableau/D3.js).</td><td>التطبيق العملي</td><td>المشروع</td></tr>
+                    <tr><td>2.2</td><td>تطوير قصص سردية باستخدام مجموعات بيانات معقدة.</td><td>ورش العمل</td><td>المهام الدراسية</td></tr>
+                    <tr><td>3.0</td><td><strong>القيم</strong></td><td></td><td></td></tr>
+                    <tr><td>3.1</td><td>إظهار المسؤولية وأخلاقيات المهنة في التعامل مع البيانات الحساسة.</td><td>المناقشات الجماعية</td><td>العروض التقديمية</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="content" class="content-card">
+        <section class="content-card">
             <h2>ج. محتوى المقرر</h2>
             <table>
-                <thead>
-                    <tr><th>م</th><th>قائمة الموضوعات</th><th>ساعات الاتصال</th></tr>
-                </thead>
+                <thead><tr><th>م</th><th>الموضوعات</th><th>ساعات الاتصال</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>مقدمة في تصميم تصور البيانات</td><td>6</td></tr>
-                    <tr><td>2</td><td>مبادئ الإدراك البصري</td><td>6</td></tr>
-                    <tr><td>3</td><td>أنواع البيانات والمخططات البصرية</td><td>12</td></tr>
-                    <tr><td>4</td><td>التفاعل ورواية القصص بالبيانات</td><td>12</td></tr>
-                    <tr><td>5</td><td>التقييم والاختبار</td><td>6</td></tr>
+                    <tr><td>1</td><td>مقدمة في مبادئ تصميم تصور البيانات</td><td>6</td></tr>
+                    <tr><td>2</td><td>الجهاز البصري البشري وعملية الإدراك</td><td>6</td></tr>
+                    <tr><td>3</td><td>تجريد البيانات (Data Abstraction) والقنوات البصرية</td><td>10</td></tr>
+                    <tr><td>4</td><td>تقنيات التفاعل والتنقل في البيانات التفاعلية</td><td>10</td></tr>
+                    <tr><td>5</td><td>رواية القصص بالبيانات وهياكل السرد</td><td>8</td></tr>
+                    <tr><td>6</td><td>منهجيات تقييم تصورات البيانات واختبار المستخدمين</td><td>8</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="assessment" class="content-card">
+        <section class="content-card">
             <h2>د. أنشطة تقييم الطلاب</h2>
             <table>
-                <thead>
-                    <tr>
-                        <th>م</th>
-                        <th>نشاط التقييم</th>
-                        <th>الأسبوع المستحق</th>
-                        <th>النسبة المئوية</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>م</th><th>نشاط التقييم</th><th>الأسبوع</th><th>النسبة</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>التكليفات والواجبات</td><td>3 - 14</td><td>10%</td></tr>
-                    <tr><td>2</td><td>المشروع الدراسي</td><td>12</td><td>30%</td></tr>
-                    <tr><td>3</td><td>الاختبار الفصلي</td><td>8</td><td>20%</td></tr>
+                    <tr><td>1</td><td>التكليفات والواجبات النظرية</td><td>3-14</td><td>10%</td></tr>
+                    <tr><td>2</td><td>المشروع الدراسي الجماعي</td><td>12</td><td>30%</td></tr>
+                    <tr><td>3</td><td>الاختبار الفصلي الأول</td><td>8</td><td>20%</td></tr>
                     <tr><td>4</td><td>الاختبار النهائي</td><td>16</td><td>40%</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="resources" class="content-card">
+        <section class="content-card">
             <h2>هـ. مصادر التعلم والمرافق</h2>
-            <p><strong>1. المراجع:</strong> تصور البيانات التفاعلي للويب (Scott Murray).</p>
-            <p><strong>2. المرافق:</strong> معمل حاسب مجهز ببرامج التصور (Tableau/D3.js).</p>
+            <p>1. الكتاب المقرر: Interactive Data Visualization for the Web (Scott Murray).</p>
+            <p>2. المراجع الأساسية: The Visual Display of Quantitative Information (Edward Tufte).</p>
+            <p>3. المرافق: معمل حاسب مجهز ببرامج Tableau ورخص D3.js.</p>
         </section>
 
-        <section id="quality" class="content-card">
+        <section class="content-card">
             <h2>و. تقويم جودة المقرر</h2>
-            <p>يتم تقييم الجودة من خلال استبيانات الطلاب، مراجعة النظراء، وتحليل أداء الطلاب في المشاريع الدراسية.</p>
+            <p>تقييم الجودة عبر استبيانات الطلاب الدورية، التقييم الذاتي من قبل أستاذ المقرر، ومراجعة نواتج التعلم من قبل لجنة القسم.</p>
         </section>
     </div>
 
-    <input type="checkbox" id="access-trigger" style="display:none;">
-    <label for="access-trigger" class="accessibility-fab">
-        <i class="fas fa-universal-access"></i>
-    </label>
-    
-    <div class="access-menu">
-        <p style="font-weight:bold; margin-bottom:10px; border-bottom:1px solid #444;">أدوات الوصول</p>
-        <button onclick="document.body.style.fontSize='120%'">تكبير الخط</button>
-        <button onclick="document.body.style.fontSize='100%'">الخط الطبيعي</button>
-        <button onclick="window.location.href='ar-light.html'">الوضع الفاتح</button>
-    </div>
+    <div class="accessibility-fab"><i class="fas fa-universal-access"></i></div>
 
 </body>
 </html>
