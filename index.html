@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Course Specification | HCI 3401</title>
+    <title>Course Specification | HCI 3401</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -17,7 +17,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
 
-        /* Navigation Bar */
         .top-navbar {
             position: fixed; top: 0; left: 0; width: 100%;
             background-color: var(--card); border-bottom: 3px solid var(--primary);
@@ -29,7 +28,6 @@
         .nav-links { display: flex; gap: 20px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
         .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
 
-        /* Container & Cards */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         .header-card {
             background: var(--card); padding: 40px; border-radius: 8px;
@@ -41,11 +39,10 @@
         .content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
         .content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #f7f7f7; padding-bottom: 12px; }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+        table th, table td { border: 1px solid var(--border); padding: 12px; text-align: left; vertical-align: top; }
         table th { background-color: var(--primary); color: white; }
 
-        /* FAB */
         .accessibility-fab {
             position: fixed; bottom: 35px; right: 35px;
             background: var(--primary); color: white;
@@ -53,6 +50,8 @@
             display: flex; justify-content: center; align-items: center;
             font-size: 26px; cursor: pointer; z-index: 2000;
         }
+        .checkbox-box { display: inline-block; width: 12px; height: 12px; border: 1px solid #333; margin-right: 5px; }
+        .checked { background-color: #333; }
     </style>
 </head>
 <body>
@@ -87,27 +86,38 @@
 
         <section class="content-card">
             <h2>A. General Information About the Course</h2>
-            <p><strong>1. Credit Hours:</strong> 4 Hours (3 Lecture + 2 Lab)</p>
-            <p><strong>2. Course Type:</strong> Required (Department Requirement)</p>
-            <p><strong>3. Level/Year:</strong> 3rd Year / 5th Level</p>
-            <p><strong>4. Pre-requirements:</strong> User Research (HCI 2203) and Database (DS 2201)</p>
+            <p><strong>1. Credit Hours:</strong> (4)</p>
+            <p><strong>2. Course Type:</strong></p>
+            <p><span class="checkbox-box"></span> University <span class="checkbox-box"></span> College <span class="checkbox-box checked"></span> Department <span class="checkbox-box"></span> Track</p>
+            <p><span class="checkbox-box checked"></span> Required <span class="checkbox-box"></span> Elective</p>
+            <p><strong>3. Level/Year:</strong> 3rd year/ 5th level</p>
+            <p><strong>4. Course General Description:</strong> This course focuses on the principles and techniques of designing effective data visualizations within the context of HCI. Students will learn how to represent complex data in intuitive ways.</p>
+            <p><strong>5. Pre-requirements:</strong> HCI2203 - User Research, DS2201 - Introduction to Database</p>
+            <p><strong>6. Co-requisites:</strong> None</p>
             <br>
-            <h3>Course Description:</h3>
-            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of HCI, covering perception, storytelling, and interactive interfaces.</p>
+            <h3>7. Course Main Objectives:</h3>
+            <ul>
+                <li>Understand foundational principles of visual perception.</li>
+                <li>Design user-centered, intuitive visualizations.</li>
+                <li>Utilize modern tools for interactive representations.</li>
+            </ul>
+            <br>
+            <h3>8. Contact Hours:</h3>
+            <p>Lectures: 30 | Laboratory: 60 | <strong>Total: 90</strong></p>
         </section>
 
         <section class="content-card">
             <h2>B. Course Learning Outcomes (CLOs)</h2>
             <table>
                 <thead>
-                    <tr><th>Code</th><th>Learning Outcomes</th><th>Strategy</th><th>Assessment</th></tr>
+                    <tr><th>Code</th><th>Course Learning Outcomes</th><th>Teaching Strategies</th><th>Assessment</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1.1</td><td>Describe visual perception and HCI design principles.</td><td>Lectures</td><td>Exams</td></tr>
-                    <tr><td>1.2</td><td>Identify data types and appropriate visual mappings.</td><td>Case Studies</td><td>Quizzes</td></tr>
-                    <tr><td>2.1</td><td>Apply modern tools to design interactive visualizations (Tableau/D3.js).</td><td>Lab Sessions</td><td>Project</td></tr>
-                    <tr><td>2.2</td><td>Develop storytelling narratives using complex datasets.</td><td>Workshops</td><td>Assignments</td></tr>
-                    <tr><td>3.1</td><td>Demonstrate professional ethics in data handling.</td><td>Discussions</td><td>Presentations</td></tr>
+                    <tr><td>1.1</td><td>Foundational knowledge of visual perception.</td><td>Discussions, Case Studies</td><td>Exams</td></tr>
+                    <tr><td>1.2</td><td>Analyze complex data for effective representation.</td><td>Demonstrations</td><td>Project</td></tr>
+                    <tr><td>2.1</td><td>Leverage modern visualization tools for interactive interfaces.</td><td>Experimentations</td><td>Project</td></tr>
+                    <tr><td>2.3</td><td>Apply iterative design based on user feedback.</td><td>Experimentations</td><td>Project</td></tr>
+                    <tr><td>3.1</td><td>Demonstrate professional responsibility and ethics.</td><td>Case Studies</td><td>Exams</td></tr>
                 </tbody>
             </table>
         </section>
@@ -115,16 +125,20 @@
         <section class="content-card">
             <h2>C. Course Content</h2>
             <table>
-                <thead>
-                    <tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr>
-                </thead>
+                <thead><tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>Introduction to Data Visualization Design Principles</td><td>15</td></tr>
-                    <tr><td>2</td><td>The Human Visual System and Perception Process</td><td>15</td></tr>
-                    <tr><td>3</td><td>Data Abstraction, Marks, and Visual Channels</td><td>20</td></tr>
-                    <tr><td>4</td><td>Interaction Techniques and Data Navigation</td><td>20</td></tr>
-                    <tr><td>5</td><td>Storytelling with Data and Narrative Structures</td><td>10</td></tr>
-                    <tr><td>6</td><td>Visualization Evaluation and User Testing</td><td>10</td></tr>
+                    <tr><td>1</td><td>Introduction to Data Visualization</td><td>6</td></tr>
+                    <tr><td>2</td><td>Principles of Visual Perception</td><td>6</td></tr>
+                    <tr><td>3</td><td>Designing with Data</td><td>12</td></tr>
+                    <tr><td>4</td><td>Visualization Tools and Technologies</td><td>12</td></tr>
+                    <tr><td>5</td><td>Storytelling with Data</td><td>6</td></tr>
+                    <tr><td>6</td><td>Interaction and Animation in Visualizations</td><td>6</td></tr>
+                    <tr><td>7</td><td>Evaluation and Testing of Visualizations</td><td>6</td></tr>
+                    <tr><td>8</td><td>Accessibility in Visualization Design</td><td>6</td></tr>
+                    <tr><td>9</td><td>Advanced Topics in Visualization</td><td>12</td></tr>
+                    <tr><td>10</td><td>Ethics in Data Visualization</td><td>6</td></tr>
+                    <tr><td>11</td><td>Trends in Data Visualization</td><td>6</td></tr>
+                    <tr><td>12</td><td>Synthesis and Review</td><td>6</td></tr>
                     <tr><td><strong>Total</strong></td><td></td><td><strong>90</strong></td></tr>
                 </tbody>
             </table>
@@ -133,29 +147,33 @@
         <section class="content-card">
             <h2>D. Students Assessment Activities</h2>
             <table>
-                <thead><tr><th>No</th><th>Activity</th><th>Week Due</th><th>Percentage</th></tr></thead>
+                <thead><tr><th>No</th><th>Assessment Activities</th><th>Timing (Week)</th><th>Percentage</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>Theoretical Assignments & Quizzes</td><td>3-14</td><td>10%</td></tr>
-                    <tr><td>2</td><td>Course Project (Group Design)</td><td>12</td><td>30%</td></tr>
-                    <tr><td>3</td><td>Midterm Examination</td><td>8</td><td>20%</td></tr>
-                    <tr><td>4</td><td>Final Examination</td><td>16</td><td>40%</td></tr>
+                    <tr><td>1</td><td>Assignments</td><td>3-14</td><td>10%</td></tr>
+                    <tr><td>2</td><td>Project</td><td>3-14</td><td>30%</td></tr>
+                    <tr><td>3</td><td>Midterm</td><td>7-8</td><td>20%</td></tr>
+                    <tr><td>4</td><td>Final Exam</td><td>16-17</td><td>40%</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="content-card">
             <h2>E. Learning Resources and Facilities</h2>
-            <p><strong>1. Required Textbooks:</strong> Interactive Data Visualization for the Web by Scott Murray (2nd Edition).</p>
-            <p><strong>2. Essential References:</strong> The Visual Display of Quantitative Information by Edward Tufte.</p>
-            <p><strong>3. Electronic Materials:</strong> Tableau Public, D3.js Gallery, and HCI design patterns documentation.</p>
-            <p><strong>4. Other Learning Materials:</strong> Specialized visualization software and UI/UX design toolkits.</p>
+            <p><strong>Essential References:</strong> Interactive Data Visualization for the Web (2nd Edition) by Scott Murray (2020).</p>
+            <p><strong>Supportive References:</strong> Data Visualization: A Practical Introduction by Kieran Healy (2019).</p>
+            <p><strong>Facilities:</strong> Traditional Classroom equipped with Multimedia Projector.</p>
         </section>
 
         <section class="content-card">
             <h2>F. Assessment of Course Quality</h2>
-            <p><strong>1. Student Feedback:</strong> Confidentially online course evaluation surveys and focus group discussions.</p>
-            <p><strong>2. Evaluation Strategies:</strong> Peer-to-peer review of teaching materials and external auditing of projects.</p>
-            <p><strong>3. Improvement Processes:</strong> Updating course content based on industry trends and annual faculty workshops.</p>
+            <table>
+                <thead><tr><th>Assessment Areas</th><th>Assessor</th><th>Methods</th></tr></thead>
+                <tbody>
+                    <tr><td>Effectiveness of teaching</td><td>Students</td><td>Direct Survey</td></tr>
+                    <tr><td>Quality of resources</td><td>Instructor / Quality Committee</td><td>Direct Survey</td></tr>
+                    <tr><td>Achievement of CLOs</td><td>Instructor / Quality Committee</td><td>Indirect: Course Report</td></tr>
+                </tbody>
+            </table>
         </section>
     </div>
 
