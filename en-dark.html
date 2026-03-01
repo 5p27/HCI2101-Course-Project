@@ -3,21 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Course Specification (Dark) | HCI 3401</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Course Specification (Dark) | HCI 3401</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* كود إضافي لضمان عمل الدارك مود حتى لو تعطل ملف الـ CSS */
-        body.dark-mode {
-            background-color: #121212 !important;
-            color: #e0e0e0 !important;
+        /* التنسيق الداكن المدمج لضمان الثبات */
+        :root {
+            --primary: #3b82f6; /* أزرق فاتح مريح للعين في الوضع الداكن */
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e0e0e0;
+            --border: #333;
         }
-        .dark-mode .content-card, .dark-mode .header-card, .dark-mode .top-navbar {
-            background-color: #1e1e1e !important;
-            border-color: #333 !important;
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+
+        /* الشريط العلوي المستطيلي */
+        .top-navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: var(--card); border-bottom: 3px solid var(--primary);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; height: 75px; z-index: 1000;
         }
-        .dark-mode table, .dark-mode th, .dark-mode td {
-            border-color: #444 !important;
+        .nav-brand { font-weight: bold; color: var(--primary); font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 20px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+        /* الهيدر الموزع */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .header-card {
+            background: var(--card); padding: 40px; border-radius: 8px;
+            margin-bottom: 35px; border: 1px solid var(--border); text-align: center;
+        }
+        .branding-row { display: flex; justify-content: space-between; font-size: 0.8rem; color: #aaa; margin-bottom: 20px; }
+        .main-title { color: var(--primary); font-size: 2.2rem; margin: 25px 0; border-top: 1px solid #333; padding-top: 20px; }
+
+        /* الكروت والجداول */
+        .content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        .content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #333; padding-bottom: 12px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; color: var(--text); }
+        table th, table td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+        table th { background-color: #252525; color: var(--primary); }
+
+        /* خانات الاختيار */
+        .checkbox { display: inline-block; width: 14px; height: 14px; border: 1px solid var(--primary); margin-right: 5px; vertical-align: middle; position: relative; }
+        .checked::after { content: '✔'; position: absolute; top: -5px; left: 1px; font-size: 12px; color: var(--primary); }
+
+        /* الدائرة الزرقاء */
+        .accessibility-fab {
+            position: fixed; bottom: 35px; right: 35px;
+            background: var(--primary); color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 26px; cursor: pointer; z-index: 2000;
         }
     </style>
 </head>
@@ -30,57 +69,80 @@
             <li><a href="ar-dark.html">العربية</a></li>
             <li><a href="team.html">Team</a></li>
         </ul>
-        <div class="mode-tag">English | Dark Mode</div>
+        <div style="font-size: 12px; font-weight: bold; color: #888;">English | Dark Mode</div>
     </nav>
 
     <div class="container">
         <header class="header-card">
             <div class="branding-row">
-                <div class="left-side">
+                <div style="text-align: left;">
                     <p>Kingdom of Saudi Arabia</p>
                     <p><strong>Education & Training Evaluation Commission</strong></p>
                     <p>National Center for Academic Accreditation and Evaluation</p>
                 </div>
-                <div class="right-side" style="text-align: right;">
+                <div style="text-align: right;">
                     <p>Umm Al Qura University</p>
                     <p>College of Computing</p>
                     <p>Software Engineering Department</p>
                 </div>
             </div>
             <h1 class="main-title">Course Specification</h1>
-            <div class="course-meta">
-                <span><strong>Course Title:</strong> Data Visualization Design</span>
-                <span><strong>Course Code:</strong> HCI 3401</span>
-            </div>
+            <p><strong>Course Title:</strong> Data Visualization Design | <strong>Course Code:</strong> HCI 3401</p>
         </header>
 
         <section class="content-card">
-            <h2>A. General Information About the Course</h2>
-            <p><strong>1. Credit Hours:</strong> 4 Hours (3 Lecture + 2 Lab)</p>
-            <p><strong>2. Course Type:</strong> Required (Department Requirement)</p>
-            <p><strong>3. Level/Year:</strong> 3rd Year / 5th Level</p>
-            <p><strong>4. Pre-requirements:</strong> User Research (HCI 2203) and Database (DS 2201)</p>
-            <p><strong>5. Co-requirements:</strong> None</p>
+            <h2>A. General information about the course</h2>
+            <h3>1. Course Identification</h3>
+            <p>1. Credit hours: (4)</p>
+            <p>2. Course type</p>
+            <p>A. <span class="checkbox"></span>University <span class="checkbox"></span>College <span class="checkbox checked"></span>Department <span class="checkbox"></span>Track <span class="checkbox"></span>Others</p>
+            <p>B. <span class="checkbox checked"></span>Required <span class="checkbox"></span>Elective</p>
+            <p>3. Level/year at which this course is offered: (3rd year/ 5th level)</p>
+            <p>4. Course General Description: This course focuses on the principles and techniques of designing effective data visualizations within the context of Human-Computer Interaction (HCI). Students will learn how to represent complex data in intuitive and interactive ways, leveraging design principles, cognitive psychology, and visualization tools.</p>
+            <p>5. Pre-requirements for this course: HCI2203 - User Research, DS2201 - Introduction to Database</p>
+            <p>6. Co-requisites for this course: None</p>
             <br>
-            <h3>Course Description:</h3>
-            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of Human-Computer Interaction (HCI). It covers visual perception, information theory, storytelling with data, and creating user-centered visual interfaces.</p>
+            <h3>7. Course Main Objective(s):</h3>
+            <ul style="margin-left: 20px;">
+                <li>Understand and apply foundational principles of data visualization, including visual perception and cognitive psychology.</li>
+                <li>Design and implement user-centered data visualizations that are intuitive, accessible, and engaging.</li>
+                <li>Utilize modern tools and technologies to create interactive and dynamic visual representations of complex data.</li>
+                <li>Critically evaluate the effectiveness and ethical considerations of visualizations in diverse contexts.</li>
+            </ul>
+            <br>
+            <h3>2. Teaching mode</h3>
+            <table>
+                <tr><th>No</th><th>Mode of Instruction</th><th>Contact Hours</th><th>Percentage</th></tr>
+                <tr><td>1</td><td>Traditional classroom</td><td>90</td><td>100%</td></tr>
+            </table>
+            <br>
+            <h3>3. Contact Hours</h3>
+            <table>
+                <tr><th>No</th><th>Activity</th><th>Contact Hours</th></tr>
+                <tr><td>1</td><td>Lectures</td><td>30</td></tr>
+                <tr><td>2</td><td>Laboratory/Studio</td><td>60</td></tr>
+                <tr><td><strong>Total</strong></td><td></td><td><strong>90</strong></td></tr>
+            </table>
         </section>
 
         <section class="content-card">
-            <h2>B. Course Learning Outcomes (CLOs)</h2>
+            <h2>B. Course Learning Outcomes (CLOs), Teaching Strategies and Assessment Methods</h2>
             <table>
                 <thead>
-                    <tr><th>Code</th><th>Learning Outcomes</th><th>Teaching Strategy</th><th>Assessment</th></tr>
+                    <tr><th>Code</th><th>Course Learning Outcomes</th><th>PLO Code</th><th>Teaching Strategies</th><th>Assessment Methods</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1.0</td><td><strong>Knowledge</strong></td><td></td><td></td></tr>
-                    <tr><td>1.1</td><td>Describe visual perception and HCI design principles.</td><td>Lectures</td><td>Exams</td></tr>
-                    <tr><td>1.2</td><td>Identify data types and appropriate visual mappings.</td><td>Case Studies</td><td>Quizzes</td></tr>
-                    <tr><td>2.0</td><td><strong>Skills</strong></td><td></td><td></td></tr>
-                    <tr><td>2.1</td><td>Apply modern tools to design interactive visualizations.</td><td>Lab Sessions</td><td>Project</td></tr>
-                    <tr><td>2.2</td><td>Develop storytelling narratives using complex datasets.</td><td>Workshops</td><td>Assignments</td></tr>
-                    <tr><td>3.0</td><td><strong>Values</strong></td><td></td><td></td></tr>
-                    <tr><td>3.1</td><td>Demonstrate professional ethics in data handling.</td><td>Discussions</td><td>Presentations</td></tr>
+                    <tr><td colspan="5" style="background:#252525; font-weight:bold; color:var(--primary);">1.0 Knowledge and understanding</td></tr>
+                    <tr><td>1.1</td><td>Demonstrate foundational knowledge of visual perception and HCI principles.</td><td>K1</td><td>Discussions, Case Studies</td><td>Assignments/ Exams</td></tr>
+                    <tr><td>1.2</td><td>Analyze complex data and determine appropriate visualization techniques.</td><td>K2</td><td>Demonstrations, Case Studies</td><td>Assignments / Project</td></tr>
+                    <tr><td>1.3</td><td>Explain the importance of inclusive and accessible visualization design.</td><td>K3</td><td>Discussions, Case Studies</td><td>Exams / Project</td></tr>
+                    <tr><td colspan="5" style="background:#252525; font-weight:bold; color:var(--primary);">2.0 Skills</td></tr>
+                    <tr><td>2.1</td><td>Leverage modern visualization tools and technologies.</td><td>S1</td><td>Demonstrations, Experimentations</td><td>Assignments / Project</td></tr>
+                    <tr><td>2.2</td><td>Communicate effectively about visualization design choices.</td><td>S3</td><td>Discussions, Design Critiques</td><td>Presentations / Project</td></tr>
+                    <tr><td>2.3</td><td>Apply iterative design and prototyping methods.</td><td>S4</td><td>Experimentations, Demonstrations</td><td>Assignments / Project</td></tr>
+                    <tr><td colspan="5" style="background:#252525; font-weight:bold; color:var(--primary);">3.0 Values, autonomy, and responsibility</td></tr>
+                    <tr><td>3.1</td><td>Demonstrate professional responsibility and ethical judgment.</td><td>V1</td><td>Case Studies, Discussions</td><td>Assignments/ Exams</td></tr>
+                    <tr><td>3.2</td><td>Advocate for inclusivity by designing accessible visualizations.</td><td>V2</td><td>Case Studies, Discussions</td><td>Exams / Project</td></tr>
                 </tbody>
             </table>
         </section>
@@ -90,12 +152,19 @@
             <table>
                 <thead><tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>Introduction to Visualization Design</td><td>6</td></tr>
-                    <tr><td>2</td><td>Human Visual System and Perception</td><td>6</td></tr>
-                    <tr><td>3</td><td>Data Abstraction and Marks/Channels</td><td>10</td></tr>
-                    <tr><td>4</td><td>Interaction Techniques and Navigation</td><td>10</td></tr>
-                    <tr><td>5</td><td>Storytelling and Narrative Structures</td><td>8</td></tr>
-                    <tr><td>6</td><td>Evaluation and User Testing</td><td>8</td></tr>
+                    <tr><td>1</td><td>Introduction to Data Visualization</td><td>6</td></tr>
+                    <tr><td>2</td><td>Principles of Visual Perception</td><td>6</td></tr>
+                    <tr><td>3</td><td>Designing with Data</td><td>12</td></tr>
+                    <tr><td>4</td><td>Visualization Tools and Technologies</td><td>12</td></tr>
+                    <tr><td>5</td><td>Storytelling with Data</td><td>6</td></tr>
+                    <tr><td>6</td><td>Interaction and Animation in Visualizations</td><td>6</td></tr>
+                    <tr><td>7</td><td>Evaluation and Testing of Visualizations</td><td>6</td></tr>
+                    <tr><td>8</td><td>Accessibility in Visualization Design</td><td>6</td></tr>
+                    <tr><td>9</td><td>Advanced Topics in Visualization</td><td>12</td></tr>
+                    <tr><td>10</td><td>Ethics in Data Visualization</td><td>6</td></tr>
+                    <tr><td>11</td><td>Trends in Data Visualization</td><td>6</td></tr>
+                    <tr><td>12</td><td>Synthesis and Review</td><td>6</td></tr>
+                    <tr><td><strong>Total</strong></td><td></td><td><strong>90</strong></td></tr>
                 </tbody>
             </table>
         </section>
@@ -103,36 +172,42 @@
         <section class="content-card">
             <h2>D. Students Assessment Activities</h2>
             <table>
-                <thead><tr><th>No</th><th>Activity</th><th>Week Due</th><th>Percentage</th></tr></thead>
+                <thead><tr><th>No</th><th>Assessment Activities</th><th>Timing (Week)</th><th>Percentage</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>Theoretical Assignments</td><td>3-14</td><td>10%</td></tr>
-                    <tr><td>2</td><td>Course Project (Group)</td><td>12</td><td>30%</td></tr>
-                    <tr><td>3</td><td>Midterm Exam</td><td>8</td><td>20%</td></tr>
-                    <tr><td>4</td><td>Final Exam</td><td>16</td><td>40%</td></tr>
+                    <tr><td>1</td><td>Assignments</td><td>3-14</td><td>10%</td></tr>
+                    <tr><td>2</td><td>Project</td><td>3-14</td><td>30%</td></tr>
+                    <tr><td>3</td><td>Midterm</td><td>7-8</td><td>20%</td></tr>
+                    <tr><td>4</td><td>Final Exam</td><td>16-17</td><td>40%</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="content-card">
             <h2>E. Learning Resources and Facilities</h2>
-            <p><strong>1. Required Textbooks:</strong> Interactive Data Visualization for the Web (Scott Murray).</p>
-            <p><strong>2. Essential References:</strong> The Visual Display of Quantitative Information (Edward Tufte).</p>
-            <p><strong>3. Facilities:</strong> Computing Lab with Tableau and D3.js support.</p>
+            <h3>1. References and Learning Resources</h3>
+            <p><strong>Essential References:</strong> Interactive Data Visualization for the Web by Scott Murray (2020).</p>
+            <p><strong>Supportive References:</strong> Data Visualization: A Practical Introduction by Kieran Healy (2019), The Truthful Art by Alberto Cairo (2016).</p>
+            <br>
+            <h3>2. Required Facilities and equipment</h3>
+            <p><strong>Facilities:</strong> Traditional Classroom.</p>
+            <p><strong>Technology equipment:</strong> Multimedia Projector, Smart Board, Software.</p>
         </section>
 
         <section class="content-card">
             <h2>F. Assessment of Course Quality</h2>
-            <p>Assessment includes student surveys, peer evaluation, and review of project deliverables by the department council.</p>
+            <table>
+                <thead><tr><th>Assessment Areas</th><th>Assessor</th><th>Assessment Methods</th></tr></thead>
+                <tbody>
+                    <tr><td>Effectiveness of teaching</td><td>Students</td><td>Direct: Survey at end of course</td></tr>
+                    <tr><td>Effectiveness of assessment</td><td>Instructor / Quality Committee</td><td>Indirect: Course Report</td></tr>
+                    <tr><td>Quality of learning resources</td><td>Instructor / Quality Committee</td><td>Direct: Survey at end of course</td></tr>
+                    <tr><td>Achievement of CLOs</td><td>Instructor / Quality Committee</td><td>Indirect: Course Report</td></tr>
+                </tbody>
+            </table>
         </section>
     </div>
 
-    <input type="checkbox" id="access-trigger" style="display:none;">
-    <label for="access-trigger" class="accessibility-fab"><i class="fas fa-universal-access"></i></label>
-    <div class="access-menu">
-        <button onclick="document.body.style.fontSize='120%'">Increase Font</button>
-        <button onclick="document.body.style.fontSize='100%'">Reset Font</button>
-        <button onclick="window.location.href='index.html'">Light Mode</button>
-    </div>
+    <div class="accessibility-fab"><i class="fas fa-universal-access"></i></div>
 
 </body>
 </html>
