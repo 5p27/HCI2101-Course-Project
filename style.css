@@ -1,4 +1,4 @@
-/* الإعدادات العامة */
+/* 1. المتغيرات الأساسية للـ Light Mode */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -7,53 +7,91 @@
     --border: #ddd;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 90px; }
+/* 2. تفعيل الـ Dark Mode تلقائياً عند وجود الكلاس */
+body.dark-mode {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #e0e0e0;
+    --border: #333;
+    --primary: #3b82f6;
+}
 
-/* الشريط العلوي المستطيلي المرتب */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6; 
+    padding-top: 100px; /* مسافة عشان الهيدر ما يغطي المحتوى */
+    transition: 0.3s;
+}
+
+/* 3. تنسيق الشريط العلوي (حل مشكلة الجوال) */
 .top-navbar {
     position: fixed; top: 0; left: 0; width: 100%;
-    background-color: var(--card); border-bottom: 3px solid var(--primary);
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 40px; height: 75px; z-index: 1000;
+    background-color: var(--card); 
+    border-bottom: 3px solid var(--primary);
+    display: flex; 
+    flex-wrap: wrap; /* يسمح للعناصر بالنزول سطر جديد في الجوال */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px; 
+    z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.nav-brand { font-weight: bold; color: var(--primary); font-size: 1.3rem; }
-.nav-links { display: flex; gap: 20px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; }
 
-/* الهيدر الموزع (Branding) */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.header-card {
-    background: var(--card); padding: 40px; border-radius: 8px;
-    margin-bottom: 35px; border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+.nav-brand { font-weight: bold; color: var(--primary); font-size: 1.1rem; }
+
+.nav-links { 
+    display: flex; 
+    gap: 15px; 
+    list-style: none; 
 }
-.branding-row { display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; }
-.main-title { text-align: center; color: var(--primary); font-size: 2.2rem; margin: 25px 0; border-top: 1px solid #eee; padding-top: 20px; }
-.course-meta { text-align: center; font-weight: bold; display: flex; justify-content: center; gap: 30px; }
 
-/* الكروت والجداول */
-.content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
-.content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #f7f7f7; padding-bottom: 12px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--primary); 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+}
 
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+/* 4. كود خاص للجوال (Media Query) */
+@media (max-width: 768px) {
+    .top-navbar { 
+        flex-direction: column; /* يخلي الشعار فوق والروابط تحت */
+        height: auto; 
+        text-align: center;
+    }
+    .nav-links { 
+        margin-top: 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+    }
+    .branding-row { 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    body { padding-top: 150px; } /* زيادة المسافة للجوال */
+}
+
+/* 5. تنسيق المحتوى والهيدر */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.header-card {
+    background: var(--card); padding: 30px; border-radius: 8px;
+    margin-bottom: 30px; border: 1px solid var(--border); text-align: center;
+}
+
+.branding-row { display: flex; justify-content: space-between; font-size: 0.75rem; color: #777; }
+
+.content-card { 
+    background: var(--card); padding: 25px; margin-bottom: 25px; 
+    border-radius: 8px; border: 1px solid var(--border); 
+}
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px; overflow-x: auto; display: block; }
+table th, table td { border: 1px solid var(--border); padding: 10px; text-align: center; min-width: 100px; }
 table th { background-color: var(--primary); color: white; }
 
-/* الدائرة الزرقاء (إمكانية الوصول) */
-.accessibility-fab {
-    position: fixed; bottom: 35px; right: 35px;
-    background: var(--primary); color: white;
-    width: 65px; height: 65px; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 28px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    cursor: pointer; z-index: 2000;
-}
-.access-menu {
-    display: none; position: fixed; bottom: 110px; right: 35px;
-    background: white; border: 2px solid var(--primary);
-    border-radius: 12px; padding: 15px; width: 220px; z-index: 1999;
-}
-#access-trigger:checked ~ .access-menu { display: block; }
-.access-menu button { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; background: #f9f9f9; }
