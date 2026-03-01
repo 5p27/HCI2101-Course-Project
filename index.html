@@ -3,89 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCI 3401 | Course Specification</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Full Course Specification | HCI 3401</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --bg: #f4f7f6;
+            --card: #ffffff;
+            --text: #333;
+            --border: #ddd;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; }
+
+        .top-navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: var(--card); border-bottom: 3px solid var(--primary);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; height: 75px; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .header-card {
+            background: var(--card); padding: 40px; border-radius: 8px;
+            margin-bottom: 35px; border: 1px solid var(--border); text-align: center;
+        }
+        .branding-row { display: flex; justify-content: space-between; font-size: 0.8rem; color: #555; }
+        .main-title { color: var(--primary); font-size: 2.2rem; margin: 25px 0; border-top: 1px solid #eee; padding-top: 20px; }
+
+        .content-card { background: var(--card); padding: 35px; margin-bottom: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        .content-card h2 { color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #f7f7f7; padding-bottom: 12px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table th, table td { border: 1px solid var(--border); padding: 15px; text-align: left; }
+        table th { background-color: var(--primary); color: white; }
+
+        .accessibility-fab {
+            position: fixed; bottom: 35px; right: 35px;
+            background: var(--primary); color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 26px; cursor: pointer; z-index: 2000;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="top-navbar">
-        <div class="nav-brand">UQU - HCI 3401</div>
+        <div class="nav-brand" style="font-weight:bold; color:var(--primary);">UQU - HCI 3401</div>
         <ul class="nav-links">
-            <li><a href="index.html">English Light</a></li>
             <li><a href="ar-light.html">العربية</a></li>
             <li><a href="en-dark.html">Dark Mode</a></li>
             <li><a href="team.html">Team</a></li>
         </ul>
-        <div class="mode-tag">English | Light Mode</div>
+        <div style="font-size: 12px; font-weight: bold; color: #666;">English | Light Mode</div>
     </nav>
 
     <div class="container">
         <header class="header-card">
             <div class="branding-row">
-                <div class="left-side">
+                <div style="text-align: left;">
                     <p>Kingdom of Saudi Arabia</p>
                     <p><strong>Education & Training Evaluation Commission</strong></p>
-                    <p>National Center for Academic Accreditation and Evaluation</p>
                 </div>
-                <div class="right-side" style="text-align: right;">
+                <div style="text-align: right;">
                     <p>Umm Al Qura University</p>
                     <p>College of Computing</p>
-                    <p>Software Engineering Department</p>
                 </div>
             </div>
             <h1 class="main-title">Course Specification</h1>
-            <div class="course-meta">
-                <span><strong>Course Title:</strong> Data Visualization Design</span>
-                <span><strong>Course Code:</strong> HCI 3401</span>
-            </div>
+            <p><strong>Course Title:</strong> Data Visualization Design | <strong>Course Code:</strong> HCI 3401</p>
         </header>
 
-        <section id="section-a" class="content-card">
+        <section class="content-card">
             <h2>A. General Information About the Course</h2>
-            <p><strong>1. Credit Hours:</strong> 4 Hours</p>
+            <p><strong>1. Credit Hours:</strong> 4 Hours (3 Lecture + 2 Lab)</p>
             <p><strong>2. Course Type:</strong> Required (Department Requirement)</p>
             <p><strong>3. Level/Year:</strong> 3rd Year / 5th Level</p>
-            <p><strong>4. Pre-requirements:</strong> User Research (HCI 2203) and Database (DS 2201)</p>
+            <p><strong>4. Pre-requirements:</strong> User Research (HCI 2203) & Database (DS 2201)</p>
             <br>
             <h3>Course Description:</h3>
-            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of HCI. Key topics include visual perception, storytelling with data, and interactive visual interfaces.</p>
+            <p>This course focuses on the principles and techniques of designing effective data visualizations within the context of HCI. It covers visual perception, storytelling with data, and interactive interfaces.</p>
         </section>
 
-        <section id="section-b" class="content-card">
+        <section class="content-card">
             <h2>B. Course Learning Outcomes (CLOs)</h2>
             <table>
                 <thead>
-                    <tr><th>Code</th><th>Learning Outcomes</th><th>Teaching Strategies</th><th>Assessment Methods</th></tr>
+                    <tr><th>Code</th><th>Learning Outcomes</th><th>Strategy</th><th>Assessment</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>1.1</td><td>Knowledge of visual perception principles</td><td>Lectures</td><td>Exams</td></tr>
-                    <tr><td>2.1</td><td>Design interactive visualization tools</td><td>Lab Sessions</td><td>Project</td></tr>
-                    <tr><td>3.1</td><td>Professional ethics in data handling</td><td>Discussions</td><td>Reports</td></tr>
+                    <tr><td>1.1</td><td>Describe visual perception and design principles.</td><td>Lectures</td><td>Exams</td></tr>
+                    <tr><td>1.2</td><td>Identify data types and visual mappings.</td><td>Case Studies</td><td>Quizzes</td></tr>
+                    <tr><td>2.1</td><td>Design interactive tools using Tableau/D3.js.</td><td>Labs</td><td>Project</td></tr>
+                    <tr><td>2.2</td><td>Develop narratives with complex data.</td><td>Workshops</td><td>Reports</td></tr>
+                    <tr><td>3.1</td><td>Show professional ethics in data handling.</td><td>Discussions</td><td>Presentations</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="section-c" class="content-card">
+        <section class="content-card">
             <h2>C. Course Content</h2>
             <table>
-                <thead><tr><th>No</th><th>List of Topics</th><th>Contact Hours</th></tr></thead>
+                <thead><tr><th>No</th><th>Topics</th><th>Hours</th></tr></thead>
                 <tbody>
-                    <tr><td>1</td><td>Introduction to Data Visualization Design</td><td>6</td></tr>
-                    <tr><td>2</td><td>Principles of Visual Perception</td><td>6</td></tr>
-                    <tr><td>3</td><td>Data Types and Visual Mapping</td><td>12</td></tr>
-                    <tr><td>4</td><td>Interaction and Storytelling</td><td>12</td></tr>
-                    <tr><td>5</td><td>Evaluation and Testing</td><td>6</td></tr>
+                    <tr><td>1</td><td>Introduction to Visualization Design</td><td>6</td></tr>
+                    <tr><td>2</td><td>Human Visual System and Perception</td><td>6</td></tr>
+                    <tr><td>3</td><td>Data Abstraction and Marks/Channels</td><td>10</td></tr>
+                    <tr><td>4</td><td>Interaction and Storytelling</td><td>10</td></tr>
+                    <tr><td>5</td><td>Evaluation and Testing</td><td>8</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="section-d" class="content-card">
+        <section class="content-card">
             <h2>D. Students Assessment Activities</h2>
             <table>
-                <thead>
-                    <tr><th>No</th><th>Assessment Activity</th><th>Week Due</th><th>Percentage</th></tr>
-                </thead>
+                <thead><tr><th>No</th><th>Activity</th><th>Week</th><th>%</th></tr></thead>
                 <tbody>
                     <tr><td>1</td><td>Assignments</td><td>3-14</td><td>10%</td></tr>
                     <tr><td>2</td><td>Course Project</td><td>12</td><td>30%</td></tr>
@@ -95,25 +133,14 @@
             </table>
         </section>
 
-        <section id="section-e" class="content-card">
-            <h2>E. Learning Resources and Facilities</h2>
-            <p><strong>1. References:</strong> Interactive Data Visualization for the Web.</p>
-            <p><strong>2. Facilities:</strong> Computing Lab with Visualization Software (Tableau/D3.js).</p>
-        </section>
-
-        <section id="section-f" class="content-card">
-            <h2>F. Assessment of Course Quality</h2>
-            <p>Quality is assessed through student feedback, peer review, and analysis of student performance in projects.</p>
+        <section class="content-card">
+            <h2>E. Resources & F. Quality</h2>
+            <p><strong>Resources:</strong> Interactive Data Visualization (Scott Murray).</p>
+            <p><strong>Quality:</strong> Assessed via surveys and peer reviews.</p>
         </section>
     </div>
 
-    <input type="checkbox" id="access-trigger" style="display:none;">
-    <label for="access-trigger" class="accessibility-fab"><i class="fas fa-universal-access"></i></label>
-    <div class="access-menu">
-        <button onclick="document.body.style.fontSize='120%'">Increase Font</button>
-        <button onclick="document.body.style.fontSize='100%'">Reset Font</button>
-        <button onclick="window.location.href='en-dark.html'">Dark Mode</button>
-    </div>
+    <div class="accessibility-fab"><i class="fas fa-universal-access"></i></div>
 
 </body>
 </html>
