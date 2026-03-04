@@ -58,8 +58,7 @@ table th { background-color: var(--primary); color: white; }
 /* مربعات الاختيار يدويًا */
 .check-box { display: inline-block; width: 16px; height: 16px; border: 1px solid #333; vertical-align: middle; text-align: center; line-height: 16px; margin: 0 5px; font-weight: bold; }
 
-
-/* كروت الفريق - تصميم مستطيل احترافي */
+/* كروت الفريق */
 .team-grid { 
     display: flex; 
     flex-wrap: wrap; 
@@ -68,45 +67,50 @@ table th { background-color: var(--primary); color: white; }
     padding: 20px 0; 
 }
 
-.member-card { 
+
+.member-card-rect { 
     background: var(--card); 
     border: 1px solid var(--border); 
     padding: 25px; 
-    border-radius: 15px; /* حواف أنعم للمستطيل */
+    border-radius: 15px; 
     text-align: center; 
-    width: 320px; /* عرض ثابت لضمان شكل المستطيل */
+    width: 320px; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
     transition: transform 0.3s ease;
 }
 
-.member-card:hover { 
-    transform: translateY(-5px); /* تأثير حركة عند التمرير */
+.member-card-rect:hover { 
+    transform: translateY(-5px); 
 }
 
-.member-card img { 
+.member-card-rect img { 
     width: 120px; 
     height: 120px; 
-    border-radius: 50%; /* الصورة تبقى دائرية داخل المستطيل */
+    border-radius: 50%; 
     object-fit: cover; 
     margin-bottom: 15px; 
     border: 4px solid var(--primary); 
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* تنسيق النصوص داخل الكرت */
-.member-card h3 { 
+.member-details h3 { 
     border: none; 
     margin-bottom: 5px; 
     font-size: 1.1rem; 
+    color: var(--primary);
 }
 
-.member-card p { 
+.member-details p { 
     margin: 5px 0; 
     font-size: 0.9rem; 
 }
 
-.member-card a { 
-    color: var(--primary); 
-    text-decoration: none; 
-    font-weight: bold; 
+.student-id {
+    font-weight: bold;
+    color: var(--text);
+}
+
+.student-email a {
+    color: var(--primary);
+    text-decoration: none;
 }
