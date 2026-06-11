@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>توصيف مقرر - تصميم تصور البيانات (الوضع الليلي)</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="dark-body"> <nav class="top-navbar">
         <div class="nav-brand">جامعة أم القرى | HCI 3401</div>
         <ul class="nav-links">
-            <li><a href="index.html">English</a></li>
-            <li><a href="ar-light.html">الوضع الفاتح</a></li>
+            <li><a href="#general-info">المعلومات العامة</a></li>
+            <li><a href="#teaching-mode">نمط التدريس</a></li>
+            <li><a href="#contact-hours">ساعات الاتصال</a></li>
+            <li><a href="#clos">مخرجات التعلم</a></li>
+            <li><a href="#course-content">محتوى المقرر</a></li>
+            <li><a href="#assessment-activities">أنشطة التقييم</a></li>
             <li><a href="team.html">فريق العمل</a></li>
+            <li><a href="ar-light.html">الوضع الفاتح</a></li>
+            <li><a href="index.html" style="color: var(--primary); border: 1px solid var(--primary); padding: 3px 8px; border-radius: 4px;">English</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <header class="content-card" style="text-align: center;">
-            <img src="logo.png" alt="هيئة تقويم التعليم والتدريب" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text); border-top: 1px solid var(--border); padding-top: 15px; opacity: 0.8;">
+        
+        <header class="content-card">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #aaa; padding-bottom: 15px; border-bottom: 1px solid #333;">
                 <div style="text-align: right;">المملكة العربية السعودية<br><b>هيئة تقويم التعليم والتدريب</b><br>المركز الوطني للتقويم والاعتماد الأكاديمي</div>
                 <div style="text-align: left;">جامعة أم القرى<br>كلية الحاسب الآلي ونظم المعلومات<br>قسم هندسة البرمجيات</div>
             </div>
-            <h1 style="margin-top: 20px; color: var(--primary);">توصيف المقرر الدراسي</h1>
+            <h1 style="margin-top: 20px; text-align: center; color: var(--primary);">توصيف المقرر الدراسي</h1>
         </header>
 
-        <section class="content-card">
+        <section id="general-info" class="content-card">
             <h2>أ. معلومات عامة عن المقرر</h2>
             <h3>1. تعريف المقرر</h3>
             <p><strong>1. الساعات المعتمدة:</strong> (4) ساعات</p>
@@ -47,144 +58,191 @@
             </ul>
         </section>
 
-        <section class="content-card">
-            <h3>2. نمط التدريس</h3>
-            <div class="table-container">
-                <table>
-                    <tr><th>م</th><th>نمط التدريس</th><th>ساعات الاتصال</th><th>النسبة المئوية</th></tr>
-                    <tr><td>1</td><td>الفصول الدراسية التقليدية</td><td>90</td><td>100%</td></tr>
-                </table>
-            </div>
-            <br>
-            <h3>3. ساعات الاتصال</h3>
-            <div class="table-container">
-                <table>
-                    <tr><th>م</th><th>النشاط</th><th>ساعات الاتصال</th></tr>
-                    <tr><td>1</td><td>المحاضرات</td><td>30</td></tr>
-                    <tr><td>2</td><td>المختبر / الاستوديو</td><td>60</td></tr>
-                    <tr><td><strong>الإجمالي</strong></td><td></td><td><strong>90</strong></td></tr>
-                </table>
-            </div>
-        </section>
-
-        <section class="content-card">
-            <h2>ب. مخرجات تعلم المقرر، استراتيجيات التدريس وطرق التقييم</h2>
+        <section id="teaching-mode" class="content-card">
+            <h2>2. نمط تقديم المقرر</h2>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>الرمز</th>
-                            <th>مخرجات تعلم المقرر</th>
-                            <th>رمز مخرجات البرنامج</th>
-                            <th>استراتيجيات التدريس</th>
-                            <th>طرق التقييم</th>
+                            <th style="width: 10%;">م</th>
+                            <th style="width: 40%;">نمط التدريس</th>
+                            <th style="width: 25%;">عدد الساعات الدراسية</th>
+                            <th style="width: 25%;">النسبة المئوية</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td colspan="5" style="background:rgba(255,255,255,0.1); font-weight:bold; color:var(--primary);">1.0 المعرفة والفهم</td></tr>
                         <tr>
-                            <td>1.1</td>
-                            <td>إظهار المعرفة التأسيسية بالإدراك البصري ومبادئ HCI.</td>
-                            <td>K1</td>
-                            <td>المناقشات، دراسة الحالات</td>
-                            <td>التكليفات / الاختبارات</td>
+                            <td>1</td>
+                            <td style="text-align: right;"><span class="check-box">X</span> التعليم التقليدي (الكامل)</td>
+                            <td>45</td>
+                            <td>50%</td>
                         </tr>
                         <tr>
-                            <td>1.2</td>
-                            <td>تحليل البيانات المعقدة وتحديد تقنيات التصور المناسبة لتمثيلها.</td>
-                            <td>K2</td>
-                            <td>العروض العملية، دراسة الحالات</td>
-                            <td>التكليفات / المشروع</td>
-                        </tr>
-                        <tr>
-                            <td>1.3</td>
-                            <td>شرح أهمية تصميم التصور الشامل وسهل الوصول.</td>
-                            <td>K3</td>
-                            <td>المناقشات، دراسة الحالات</td>
-                            <td>الاختبارات / المشروع</td>
-                        </tr>
-                        <tr><td colspan="5" style="background:rgba(255,255,255,0.1); font-weight:bold; color:var(--primary);">2.0 المهارات</td></tr>
-                        <tr>
-                            <td>2.1</td>
-                            <td>استخدام أدوات وتقنيات التصور الحديثة لإنشاء واجهات تفاعلية.</td>
-                            <td>S1</td>
-                            <td>العروض العملية، التجارب</td>
-                            <td>التكليفات / المشروع</td>
-                        </tr>
-                        <tr>
-                            <td>2.2</td>
-                            <td>التواصل الفعال حول خيارات تصميم التصور ومواءمتها مع احتياجات المستخدم.</td>
-                            <td>S3</td>
-                            <td>المناقشات، نقد التصميم</td>
-                            <td>العروض التقديمية / المشروع</td>
-                        </tr>
-                        <tr>
-                            <td>2.3</td>
-                            <td>تطبيق طرق التصميم التكراري والنماذج الأولية لتحسين التصورات.</td>
-                            <td>S4</td>
-                            <td>التجارب، العروض العملية</td>
-                            <td>التكليفات / المشروع</td>
-                        </tr>
-                        <tr><td colspan="5" style="background:rgba(255,255,255,0.1); font-weight:bold; color:var(--primary);">3.0 القيم، الاستقلالية والمسؤولية</td></tr>
-                        <tr>
-                            <td>3.1</td>
-                            <td>إظهار المسؤولية المهنية والحكم الأخلاقي في تصميم تصورات صادقة.</td>
-                            <td>V1</td>
-                            <td>دراسة الحالات، المناقشات</td>
-                            <td>التكليفات / الاختبارات</td>
-                        </tr>
-                        <tr>
-                            <td>3.2</td>
-                            <td>الدعوة للشمولية من خلال تصميم تصورات بيانات عادلة لجميع المستخدمين.</td>
-                            <td>V2</td>
-                            <td>دراسة الحالات، المناقشات</td>
-                            <td>الاختبارات / المشروع</td>
+                            <td>2</td>
+                            <td style="text-align: right;"><span class="check-box">X</span> التعليم المدمج (تقليدي وعبر الإنترنت)</td>
+                            <td>45</td>
+                            <td>50%</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-<section class="content-card">
-    <h2>ج. محتوى المقرر</h2>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 10%;">م</th>
-                    <th style="width: 70%;">قائمة الموضوعات</th>
-                    <th style="width: 20%;">ساعات الاتصال</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>مقدمة في تصور البيانات</td><td>6</td></tr>
-                <tr><td>2</td><td>مبادئ الإدراك البصري</td><td>6</td></tr>
-                <tr><td>3</td><td>التصميم باستخدام البيانات</td><td>12</td></tr>
-                <tr><td>4</td><td>أدوات وتقنيات التصور</td><td>12</td></tr>
-                <tr><td>5</td><td>سرد القصص بالبيانات</td><td>6</td></tr>
-                <tr><td>6</td><td>التفاعل والتحريك في التصورات</td><td>6</td></tr>
-                <tr><td>7</td><td>تقييم واختبار التصورات</td><td>6</td></tr>
-                <tr><td>8</td><td>إمكانية الوصول في تصميم التصور</td><td>6</td></tr>
-                <tr><td>9</td><td>مواضيع متقدمة في التصور</td><td>12</td></tr>
-                <tr><td>10</td><td>الأخلاقيات في تصور البيانات</td><td>6</td></tr>
-                <tr><td>11</td><td>الاتجاهات الحديثة في تصور البيانات</td><td>6</td></tr>
-                <tr><td>12</td><td>التوليف والمراجعة</td><td>6</td></tr>
-            </tbody>
-            <tfoot>
-                <tr style="background-color: var(--primary); color: white; font-weight: bold;">
-                    <td colspan="2">الإجمالي</td>
-                    <td>90</td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-</section>
 
-        <section class="content-card">
+        <section id="contact-hours" class="content-card">
+            <h2>3. ساعات الاتصال (موزعة حسب الفصل الدراسي)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">م</th>
+                            <th style="width: 60%;">النشاط الدراسي</th>
+                            <th style="width: 30%;">ساعات الاتصال</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td style="text-align: right;">محاضرات</td><td>45</td></tr>
+                        <tr><td>2</td><td style="text-align: right;">معمل أو استوديو</td><td>45</td></tr>
+                        <tr style="font-weight: bold; background-color: rgba(255,255,255,0.05);">
+                            <td colspan="2">الإجمالي</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="clos" class="content-card">
+            <h2>ب. مخرجات تعلم المقرر، استراتيجيات التدريس وطرق التقييم</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">الرمز</th>
+                            <th style="width: 45%;">مخرجات التعلم للمقرر (CLOs)</th>
+                            <th style="width: 15%;">الرمز المرتبط بمخرجات البرنامج</th>
+                            <th style="width: 15%;">استراتيجيات التدريس</th>
+                            <th style="width: 15%;">طرق التقييم</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: rgba(255,255,255,0.05);">
+                            <td colspan="5" style="text-align: right; font-weight: bold; color: var(--primary);">1.0 المعرفة والفهم (Knowledge and understanding)</td>
+                        </tr>
+                        <tr>
+                            <td>1.1</td>
+                            <td style="text-align: right;">إظهار المعرفة التأسيسية بالإدراك البصري ومبادئ تفاعل الإنسان مع الحاسب (HCI)، وشرح كيفية الاستفادة منها في تصميم تصورات بيانات تركز على المستخدم.</td>
+                            <td>K1</td>
+                            <td>المناقشات<br>دراسات الحالة</td>
+                            <td>التكليفات<br>الاختبارات</td>
+                        </tr>
+                        <tr>
+                            <td>1.2</td>
+                            <td style="text-align: right;">تحليل البيانات المعقدة وتحديد تقنيات التصور المناسبة لتمثيلها بشكل فعال.</td>
+                            <td>K2</td>
+                            <td>العروض العملية<br>دراسات الحالة</td>
+                            <td>التكليفات<br>المشروع</td>
+                        </tr>
+                        <tr>
+                            <td>1.3</td>
+                            <td style="text-align: right;">شرح أهمية تصميم التصور الشامل وسهل الوصول، مع مراعاة احتياجات المستخدمين المتنوعة والسياقات الثقافية المختلفة.</td>
+                            <td>K3</td>
+                            <td>المناقشات<br>دراسات الحالة</td>
+                            <td>الاختبارات<br>المشروع</td>
+                        </tr>
+
+                        <tr style="background-color: rgba(255,255,255,0.05);">
+                            <td colspan="5" style="text-align: right; font-weight: bold; color: var(--primary);">2.0 المهارات (Skills)</td>
+                        </tr>
+                        <tr>
+                            <td>2.1</td>
+                            <td style="text-align: right;">استخدام أدوات وتقنيات تصور البيانات الحديثة لإنشاء واجهات بصرية تفاعلية وديناميكية تركز على المستخدم.</td>
+                            <td>S1</td>
+                            <td>العروض العملية<br>التجارب</td>
+                            <td>التكليفات<br>المشروع</td>
+                        </tr>
+                        <tr>
+                            <td>2.2</td>
+                            <td style="text-align: right;">التواصل الفعال حول خيارات تصميم التصور ومدى مواءمتها مع احتياجات المستخدمين وأصحاب المصلحة.</td>
+                            <td>S3</td>
+                            <td>المناقشات<br>نقد التصميم</td>
+                            <td>العروض التقديمية<br>المشروع</td>
+                        </tr>
+                        <tr>
+                            <td>2.3</td>
+                            <td style="text-align: right;">تطبيق طرق التصميم التكراري والنماذج الأولية لتحسين التصورات بناءً على ملاحظات المستخدمين واختبارات سهولة الاستخدام.</td>
+                            <td>S4</td>
+                            <td>التجارب<br>العروض العملية</td>
+                            <td>التكليفات<br>المشروع</td>
+                        </tr>
+
+                        <tr style="background-color: rgba(255,255,255,0.05);">
+                            <td colspan="5" style="text-align: right; font-weight: bold; color: var(--primary);">3.0 القيم، الاستقلالية والمسؤولية (Values, autonomy, and responsibility)</td>
+                        </tr>
+                        <tr>
+                            <td>3.1</td>
+                            <td style="text-align: right;">إظهار المسؤولية المهنية والحكم الأخلاقي في تصميم تصورات بيانات صادقة وغير متحيزة.</td>
+                            <td>V1</td>
+                            <td>دراسات الحالة<br>المناقشات</td>
+                            <td>التكليفات<br>الاختبارات</td>
+                        </tr>
+                        <tr>
+                            <td>3.2</td>
+                            <td style="text-align: right;">الدعوة للشمولية من خلال تصميم تصورات بيانات عادلة وسهلة الوصول لجميع المستخدمين.</td>
+                            <td>V2</td>
+                            <td>دراسات الحالة<br>المناقشات</td>
+                            <td>الاختبارات<br>المشروع</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="course-content" class="content-card">
+            <h2>ج. محتوى المقرر</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">م</th>
+                            <th style="width: 70%;">قائمة الموضوعات</th>
+                            <th style="width: 20%;">ساعات الاتصال</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>مقدمة في تصور البيانات</td><td>6</td></tr>
+                        <tr><td>2</td><td>مبادئ الإدراك البصري</td><td>6</td></tr>
+                        <tr><td>3</td><td>التصميم باستخدام البيانات</td><td>12</td></tr>
+                        <tr><td>4</td><td>أدوات وتقنيات التصور</td><td>12</td></tr>
+                        <tr><td>5</td><td>سرد القصص بالبيانات</td><td>6</td></tr>
+                        <tr><td>6</td><td>التفاعل والتحريك في التصورات</td><td>6</td></tr>
+                        <tr><td>7</td><td>تقييم واختبار التصورات</td><td>6</td></tr>
+                        <tr><td>8</td><td>إمكانية الوصول في تصميم التصور</td><td>6</td></tr>
+                        <tr><td>9</td><td>مواضيع متقدمة في التصور</td><td>12</td></tr>
+                        <tr><td>10</td><td>الأخلاقيات في تصور البيانات</td><td>6</td></tr>
+                        <tr><td>11</td><td>الاتجاهات الحديثة في تصور البيانات</td><td>6</td></tr>
+                        <tr><td>12</td><td>التوليف والمراجعة</td><td>6</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: var(--primary); color: white; font-weight: bold;">
+                            <td colspan="2">الإجمالي</td>
+                            <td>90</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="assessment-activities" class="content-card">
             <h2>د. أنشطة تقييم الطلاب</h2>
             <div class="table-container">
                 <table>
                     <thead>
-                        <tr><th>م</th><th>أنشطة التقييم</th><th>توقيت التقييم (بالأسبوع)</th><th>النسبة من إجمالي الدرجة</th></tr>
+                        <tr>
+                            <th>م</th>
+                            <th>أنشطة التقييم</th>
+                            <th>توقيت التقييم (بالأسبوع)</th>
+                            <th>النسبة من إجمالي الدرجة</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr><td>1</td><td>التكليفات</td><td>3-14</td><td>10%</td></tr>
@@ -208,16 +266,8 @@
                     </a>
                 </div>
             </div>
-
-            <br>
-            <h3>2. المرافق والمعدات المطلوبة</h3>
-            <ul>
-                <li><strong>المرافق:</strong> فصول دراسية تقليدية</li>
-                <li><strong>المعدات:</strong> جهاز عرض وسائط متعددة، سبورة ذكية، برمجيات</li>
-            </ul>
         </section>
     </div>
 
 </body>
 </html>
-
