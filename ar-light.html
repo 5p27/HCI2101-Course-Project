@@ -6,6 +6,7 @@
     <title>توصيف مقرر - تصميم تصور البيانات</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* إضافة تأثير الانتقال السلس عند الضغط على الأزرار */
         html {
             scroll-behavior: smooth;
         }
@@ -17,21 +18,25 @@
         <div class="nav-brand">جامعة أم القرى | HCI 3401</div>
         <ul class="nav-links">
             <li><a href="#general-info">المعلومات العامة</a></li>
+            <li><a href="#teaching-mode">نمط التدريس</a></li>
+            <li><a href="#contact-hours">ساعات الاتصال</a></li>
             <li><a href="#course-content">محتوى المقرر</a></li>
+            <li><a href="#clos">مخرجات التعلم</a></li>
             <li><a href="#assessment-activities">أنشطة التقييم</a></li>
             <li><a href="team.html">فريق العمل</a></li>
             <li><a href="ar-dark.html">الوضع الليلي</a></li>
+            <li><a href="index.html" style="color: var(--primary); border: 1px solid var(--primary); padding: 3px 8px; border-radius: 4px;">English</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <header class="content-card" style="text-align: center;">
-            <img src="logo.png" alt="هيئة تقويم التعليم والتدريب" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; border-top: 1px solid #eee; padding-top: 15px;">
+        
+        <header class="content-card">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; padding-bottom: 15px; border-bottom: 1px solid #eee;">
                 <div style="text-align: right;">المملكة العربية السعودية<br><b>هيئة تقويم التعليم والتدريب</b><br>المركز الوطني للتقويم والاعتماد الأكاديمي</div>
                 <div style="text-align: left;">جامعة أم القرى<br>كلية الحاسب الآلي ونظم المعلومات<br>قسم هندسة البرمجيات</div>
             </div>
-            <h1 style="margin-top: 20px; color: var(--primary);">توصيف المقرر الدراسي</h1>
+            <h1 style="margin-top: 20px; text-align: center; color: var(--primary);">توصيف المقرر الدراسي</h1>
         </header>
 
         <section id="general-info" class="content-card">
@@ -54,6 +59,79 @@
                 <li>استخدام الأدوات والتقنيات الحديثة لإنشاء تمثيلات بصرية تفاعلية وديناميكية للبيانات المعقدة.</li>
                 <li>التقييم النقدي لفعالية والاعتبارات الأخلاقية للتصورات في سياقات متنوعة.</li>
             </ul>
+        </section>
+
+        <section id="teaching-mode" class="content-card">
+            <h2>2. نمط التدريس تقديم المقرر (اختر كل ما ينطبق)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>نمط التدريس</th>
+                            <th>عدد الساعات الدراسية</th>
+                            <th>النسبة المئوية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td style="text-align: right;"><span class="check-box">X</span> التعليم التقليدي (الكامل)</td>
+                            <td>45</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td style="text-align: right;"><span class="check-box">X</span> التعليم المدمج (تقليدي وعبر الإنترنت)</td>
+                            <td>45</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td style="text-align: right;"><span class="check-box"></span> التعليم الإلكتروني (الكامل عبر الإنترنت)</td>
+                            <td>0</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td style="text-align: right;"><span class="check-box"></span> المراسلة</td>
+                            <td>0</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td style="text-align: right;"><span class="check-box"></span> أخرى</td>
+                            <td>0</td>
+                            <td>0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact-hours" class="content-card">
+            <h2>3. ساعات الاتصال (موزعة حسب الفصل الدراسي)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>النشاط الدراسي</th>
+                            <th>ساعات الاتصال</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td style="text-align: right;">محاضرات</td><td>45</td></tr>
+                        <tr><td>2</td><td style="text-align: right;">معمل أو استوديو</td><td>45</td></tr>
+                        <tr><td>3</td><td style="text-align: right;">دروس إضافية</td><td>0</td></tr>
+                        <tr><td>4</td><td style="text-align: right;">أخرى (تذكرها)</td><td>0</td></tr>
+                        <tr style="font-weight: bold; background-color: #f9f9f9;">
+                            <td colspan="2">الإجمالي</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section id="course-content" class="content-card">
@@ -91,12 +169,76 @@
             </div>
         </section>
 
+        <section id="clos" class="content-card">
+            <h2>ب. مخرجات تعلم المقرر، استراتيجيات التدريس وطرق التقييم</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الرمز</th>
+                            <th>مخرجات التعلم للمقرر (CLOs)</th>
+                            <th>الرمز المرتبط بمخرجات البرنامج</th>
+                            <th>استراتيجيات التدريس</th>
+                            <th>طرق التقييم</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #f5f5f5;"><td colspan="5" style="text-align: right; font-weight: bold;">1.0 المعرفة والفهم</td></tr>
+                        <tr>
+                            <td>1.1</td>
+                            <td style="text-align: right;">وصف المبادئ المعرفية والإدراكية البصرية التي تدعم التصميم الفعال لتصور البيانات.</td>
+                            <td>K1</td>
+                            <td>محاضرات / مناقشات صفية</td>
+                            <td>اختبار نصفي / اختبار نهائي</td>
+                        </tr>
+                        <tr>
+                            <td>1.2</td>
+                            <td style="text-align: right;">تحديد المتطلبات والاعتبارات الأخلاقية وإمكانية الوصول لجمهور متنوع.</td>
+                            <td>K2</td>
+                            <td>دراسة حالة</td>
+                            <td>التكليفات والواجبات</td>
+                        </tr>
+
+                        <tr style="background-color: #f5f5f5;"><td colspan="5" style="text-align: right; font-weight: bold;">2.0 المهارات</td></tr>
+                        <tr>
+                            <td>2.1</td>
+                            <td style="text-align: right;">تصميم واجهات تصور بيانات تفاعلية وديناميكية تركز على المستخدم.</td>
+                            <td>S1</td>
+                            <td>تطبيق عملي في المعمل</td>
+                            <td>تقييم المشروع والعملي</td>
+                        </tr>
+                        <tr>
+                            <td>2.2</td>
+                            <td style="text-align: right;">استخدام الأدوات والتقنيات الحديثة لتوليف وتحويل مجموعات البيانات المعقدة.</td>
+                            <td>S3</td>
+                            <td>مشاريع جماعية</td>
+                            <td>عرض المشروع والاختبارات</td>
+                        </tr>
+
+                        <tr style="background-color: #f5f5f5;"><td colspan="5" style="text-align: right; font-weight: bold;">3.0 القيم</td></tr>
+                        <tr>
+                            <td>3.1</td>
+                            <td style="text-align: right;">العمل بفعالية ضمن فريق لتطوير وتقييم حلول التصور البديهية.</td>
+                            <td>V1</td>
+                            <td>تعلم تعاوني / عمل جماعي</td>
+                            <td>تقييم الزملاء والمشروع</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         <section id="assessment-activities" class="content-card">
             <h2>د. أنشطة تقييم الطلاب</h2>
             <div class="table-container">
                 <table>
                     <thead>
-                        <tr><th>م</th><th>أنشطة التقييم</th><th>توقيت التقييم (بالأسبوع)</th><th>النسبة من إجمالي الدرجة</th></tr>
+                        <tr>
+                            <th>م</th>
+                            <th>أنشطة التقييم</th>
+                            <th>توقيت التقييم (بالأسبوع)</th>
+                            <th>النسبة من إجمالي الدرجة</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr><td>1</td><td>التكليفات</td><td>3-14</td><td>10%</td></tr>
