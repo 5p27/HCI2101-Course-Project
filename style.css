@@ -1,6 +1,6 @@
 /* 1. إعدادات الصفحة الأساسية وحركة النزول الانسيابي */
 html {
-    scroll-behavior: smooth; /* شغلته: يخلي الشاشة تنزل بنعومة وسلاسة لما تضغط على الأزرار العلوية */
+    scroll-behavior: smooth; /* يخلي الشاشة تنزل بنعومة وسلاسة لما تضغط على الأزرار العلوية */
 }
 
 /* الألوان الافتراضية للوضع الفاتح */
@@ -32,12 +32,12 @@ body {
     background-color: var(--bg); 
     color: var(--text); 
     line-height: 1.6; 
-    padding-top: 95px; /* شغلته: يمنع الكلام من الاختفاء تحت شريط الأزرار العلوي */
+    padding-top: 95px; /* يمنع الكلام من الاختفاء تحت شريط الأزرار العلوي */
 }
 
-/* 2. شريط التنقل العلوي المتجاوب (اللف يمين ويسار للجوال) */
+/* 2. شريط التنقل العلوي الثابت والمقاوم للتداخل */
 .top-navbar {
-    position: fixed; /* شغلته: يثبت الشريط في أعلى الشاشة طول الوقت أثناء التصفح */
+    position: fixed; /* يثبت الشريط في أعلى الشاشة طول الوقت أثناء التصفح */
     top: 0; left: 0; width: 100%;
     background-color: var(--card); 
     border-bottom: 3px solid var(--primary);
@@ -54,7 +54,7 @@ body {
     font-weight: bold;
     color: var(--text);
     font-size: 1.1rem;
-    white-space: nowrap;
+    white-space: nowrap; /* يمنع اسم الجامعة من الانقسام */
 }
 
 .nav-links { 
@@ -68,26 +68,43 @@ body {
     color: var(--primary); 
     font-weight: bold; 
     font-size: 14px; 
-    white-space: nowrap;
+    white-space: nowrap; /* يمنع نص الزر الواحد من الانقسام والتداخل */
 }
 
-/* تحسين الجوال: تفعيل اللف يمين ويسار للأزرار في الشاشات الصغيرة */
+/* التحسين الإجباري والنهائي لشاشات الجوال (اللف الأفقي الصارم) */
 @media (max-width: 768px) {
     .top-navbar {
-        flex-direction: column; /* شغلته: يحط اسم الجامعة فوق والأزرار تحت لترتيب المساحة في الجوال */
+        flex-direction: column; /* يحط اسم الجامعة فوق والأزرار تحت */
         justify-content: center;
-        gap: 10px; padding: 10px; height: auto;
+        gap: 8px; 
+        padding: 10px; 
+        height: auto;
     }
-    body { padding-top: 110px; }
+    
+    body { 
+        padding-top: 115px; /* مسافة أمان علوية للجوال */
+    }
+    
     .nav-links {
         width: 100%;
-        overflow-x: auto; /* شغلته: يفعل ميزة سحب ولف الأزرار يمين ويسار بالإصبع */
-        padding-bottom: 8px;
+        display: flex !important; /* إجبار الأزرار على البقاء بجانب بعضها */
+        flex-direction: row !important; /* منع الأزرار من النزول تحت بعضها */
+        flex-wrap: nowrap !important; /* منع الالتفاف الإجباري */
+        overflow-x: auto !important; /* تفعيل سحب ولف الأزرار يمين ويسار بالإصبع */
+        padding: 5px 10px 10px 10px;
         justify-content: flex-start;
-        -webkit-overflow-scrolling: touch; /* يخلي حركة اللف ناعمة جداً في الآيفون والأندرويد */
-        scrollbar-width: none; /* يخفي شريط التمرير المشوه */
+        -webkit-overflow-scrolling: touch; /* تمرير فائق النعومة لشاشات اللمس */
+        scrollbar-width: none; /* إخفاء الشريط في فايرفوكس */
     }
-    .nav-links::-webkit-scrollbar { display: none; } /* يخفي شريط التمرير في متصفحات الكروم والـ Safari */
+    
+    .nav-links::-webkit-scrollbar { 
+        display: none !important; /* إخفاء الشريط تماماً في كروم وسفاري */
+    }
+    
+    .nav-links li {
+        padding: 0 4px;
+        display: inline-block;
+    }
 }
 
 /* 3. تنسيق البطاقات البيضاء والهيكل العام للموقع */
@@ -98,7 +115,7 @@ body {
 }
 
 .content-card { 
-    background: var(--card); /* شغلته: يعطي المربعات (البطاقات) خلفية بيضاء في الفاتح ورمادية في الداكن */
+    background: var(--card); /* خلفية بيضاء في الفاتح ورمادية في الداكن */
     padding: 30px; 
     margin-bottom: 25px; 
     border-radius: 10px; 
@@ -115,7 +132,7 @@ body {
 
 /* خانات الاختيار اليدوية المربعة [X] */
 .check-box {
-    display: inline-block; /* شغلته: يرسم مربعات صغيرة تشبه الـ Checkbox بدون استخدام أكواد معقدة */
+    display: inline-block; 
     width: 18px; height: 18px;
     border: 1px solid var(--text);
     text-align: center; line-height: 16px;
@@ -125,7 +142,7 @@ body {
 /* 4. تنسيق الجداول المتجاوبة لجداول التوصيف والمخرجات */
 .table-container {
     width: 100%;
-    overflow-x: auto; /* شغلته: يخلي الجداول تلتف وتتحرك يمين ويسار في الجوال عشان ما تطلع برا الشاشة */
+    overflow-x: auto; /* يخلي الجداول تتحرك يمين ويسار في الجوال */
     margin: 15px 0;
 }
 
@@ -142,7 +159,7 @@ table th, table td {
 }
 
 table th { 
-    background-color: var(--primary); /* شغلته: يعطي عناوين الجدول اللون الأزرق الأساسي */
+    background-color: var(--primary); 
     color: white; 
 }
 
@@ -156,7 +173,7 @@ table th {
 
 .team-card {
     background-color: var(--card);
-    width: 320px; /* شغلته: يعطي كرت الطالب شكلاً مستطيلاً ثابتاً ومتناسقاً */
+    width: 320px; 
     padding: 25px; 
     border-radius: 15px;
     border: 1px solid var(--border);
@@ -166,12 +183,12 @@ table th {
 }
 
 .team-card:hover { 
-    transform: translateY(-8px); /* شغلته: يرفع الكرت للأعلى بشكل خفيف وجميل لما تمرر الماوس عليه */
+    transform: translateY(-8px); 
 }
 
 .team-card img {
     width: 120px; height: 120px;
-    border-radius: 50%; /* شغلته: يقص صورة عضو الفريق ليجعلها دائرية داخل الكرت المستطيل */
+    border-radius: 50%; 
     object-fit: cover;
     border: 4px solid var(--primary);
 }
@@ -191,8 +208,6 @@ table th {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.ref-link {
-    color: var(--primary); 
-    text-decoration: none; 
-    font-weight: bold;
+.nav-brand, .nav-links a {
+    text-transform: none !important;
 }
