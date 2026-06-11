@@ -1,10 +1,9 @@
-/* ==========================================================================
-   1. الإعدادات العامة وخاصية النزول الانسيابي (Smooth Scroll)
-   ========================================================================== */
+/* 1. إعدادات الصفحة الأساسية وحركة النزول الانسيابي */
 html {
-    scroll-behavior: smooth; /* ميزة التنقل السلس بين الأقسام بدون جافا سكربت */
+    scroll-behavior: smooth; /* شغلته: يخلي الشاشة تنزل بنعومة وسلاسة لما تضغط على الأزرار العلوية */
 }
 
+/* الألوان الافتراضية للوضع الفاتح */
 :root {
     --primary: #0056b3;
     --bg: #f4f7f6;
@@ -13,7 +12,7 @@ html {
     --border: #ddd;
 }
 
-/* كلاس الوضع الليلي يتم تفعيله عند وجوده في وسم الـ body */
+/* الألوان الخاصة بالوضع الداكن */
 .dark-body {
     --bg: #121212;
     --card: #1e1e1e;
@@ -33,17 +32,13 @@ body {
     background-color: var(--bg); 
     color: var(--text); 
     line-height: 1.6; 
-    padding-top: 95px; /* مسافة لمنع اختفاء المحتوى تحت شريط التنقل الثابت */
+    padding-top: 95px; /* شغلته: يمنع الكلام من الاختفاء تحت شريط الأزرار العلوي */
 }
 
-/* ==========================================================================
-   2. شريط التنقل العلوي الثابت (Top Navbar)
-   ========================================================================== */
+/* 2. شريط التنقل العلوي المتجاوب (اللف يمين ويسار للجوال) */
 .top-navbar {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%;
+    position: fixed; /* شغلته: يثبت الشريط في أعلى الشاشة طول الوقت أثناء التصفح */
+    top: 0; left: 0; width: 100%;
     background-color: var(--card); 
     border-bottom: 3px solid var(--primary);
     display: flex; 
@@ -59,6 +54,7 @@ body {
     font-weight: bold;
     color: var(--text);
     font-size: 1.1rem;
+    white-space: nowrap;
 }
 
 .nav-links { 
@@ -72,16 +68,29 @@ body {
     color: var(--primary); 
     font-weight: bold; 
     font-size: 14px; 
-    transition: color 0.2s;
+    white-space: nowrap;
 }
 
-.nav-links a:hover {
-    color: var(--text);
+/* تحسين الجوال: تفعيل اللف يمين ويسار للأزرار في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column; /* شغلته: يحط اسم الجامعة فوق والأزرار تحت لترتيب المساحة في الجوال */
+        justify-content: center;
+        gap: 10px; padding: 10px; height: auto;
+    }
+    body { padding-top: 110px; }
+    .nav-links {
+        width: 100%;
+        overflow-x: auto; /* شغلته: يفعل ميزة سحب ولف الأزرار يمين ويسار بالإصبع */
+        padding-bottom: 8px;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch; /* يخلي حركة اللف ناعمة جداً في الآيفون والأندرويد */
+        scrollbar-width: none; /* يخفي شريط التمرير المشوه */
+    }
+    .nav-links::-webkit-scrollbar { display: none; } /* يخفي شريط التمرير في متصفحات الكروم والـ Safari */
 }
 
-/* ==========================================================================
-   3. تنسيق الهيكل العام والبطاقات (Layout & Cards)
-   ========================================================================== */
+/* 3. تنسيق البطاقات البيضاء والهيكل العام للموقع */
 .container { 
     max-width: 1100px; 
     margin: 0 auto; 
@@ -89,7 +98,7 @@ body {
 }
 
 .content-card { 
-    background: var(--card); 
+    background: var(--card); /* شغلته: يعطي المربعات (البطاقات) خلفية بيضاء في الفاتح ورمادية في الداكن */
     padding: 30px; 
     margin-bottom: 25px; 
     border-radius: 10px; 
@@ -104,46 +113,25 @@ body {
     padding-bottom: 8px;
 }
 
-.content-card h3 {
-    margin: 15px 0 10px 0;
-    color: var(--text);
-}
-
-.content-card p {
-    margin-bottom: 10px;
-}
-
-ul, ol {
-    margin-right: 30px;
-    margin-bottom: 15px;
-}
-
-/* خانات الاختيار اليدوية */
+/* خانات الاختيار اليدوية المربعة [X] */
 .check-box {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
+    display: inline-block; /* شغلته: يرسم مربعات صغيرة تشبه الـ Checkbox بدون استخدام أكواد معقدة */
+    width: 18px; height: 18px;
     border: 1px solid var(--text);
-    text-align: center;
-    line-height: 16px;
-    font-weight: bold;
-    margin: 0 5px;
-    font-size: 12px;
+    text-align: center; line-height: 16px;
+    font-weight: bold; margin: 0 5px; font-size: 12px;
 }
 
-/* ==========================================================================
-   4. تنسيق الجداول المتجاوبة (Tables)
-   ========================================================================== */
+/* 4. تنسيق الجداول المتجاوبة لجداول التوصيف والمخرجات */
 .table-container {
     width: 100%;
-    overflow-x: auto; /* يسمح بالتمرير الجانبي على الشاشات الصغيرة لجعل الجدول متجاوباً */
+    overflow-x: auto; /* شغلته: يخلي الجداول تلتف وتتحرك يمين ويسار في الجوال عشان ما تطلع برا الشاشة */
     margin: 15px 0;
 }
 
 table { 
     width: 100%; 
     border-collapse: collapse; 
-    margin-bottom: 10px; 
     background-color: var(--card);
 }
 
@@ -154,105 +142,57 @@ table th, table td {
 }
 
 table th { 
-    background-color: var(--primary); 
+    background-color: var(--primary); /* شغلته: يعطي عناوين الجدول اللون الأزرق الأساسي */
     color: white; 
 }
 
-/* تنسيق الصفوف الفرعية لجدول مخرجات التعلم */
-table tbody tr td[colspan="5"] {
-    font-weight: bold;
-    text-align: right;
-    padding: 10px;
-}
-
-/* ==========================================================================
-   5. تنسيق كروت الفريق المستطيلة والاحترافية (Team Section)
-   ========================================================================== */
+/* 5. تنسيق كروت فريق العمل المستطيلة */
 .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
     gap: 25px;
-    padding: 20px 0;
 }
 
 .team-card {
     background-color: var(--card);
-    width: 320px; /* عرض ثابت يعطي شكل المستطيل المتناسق */
-    padding: 25px;
+    width: 320px; /* شغلته: يعطي كرت الطالب شكلاً مستطيلاً ثابتاً ومتناسقاً */
+    padding: 25px; 
     border-radius: 15px;
+    border: 1px solid var(--border);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
-    border: 1px solid var(--border);
     transition: transform 0.3s ease;
 }
 
 .team-card:hover { 
-    transform: translateY(-8px); /* تأثير حركة خفيف عند مرور الماوس */
+    transform: translateY(-8px); /* شغلته: يرفع الكرت للأعلى بشكل خفيف وجميل لما تمرر الماوس عليه */
 }
 
 .team-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* الصورة دائرية داخل الكرت المستطيل */
+    width: 120px; height: 120px;
+    border-radius: 50%; /* شغلته: يقص صورة عضو الفريق ليجعلها دائرية داخل الكرت المستطيل */
     object-fit: cover;
-    margin-bottom: 15px;
     border: 4px solid var(--primary);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.names h3 { 
-    font-size: 1.1rem; 
-    margin-bottom: 5px; 
-}
-
-.name-en { 
-    color: var(--primary); 
-    font-weight: bold; 
-}
-
-.name-ar { 
-    direction: rtl; 
-}
-
-.team-card p { 
-    margin: 8px 0; 
-    font-size: 0.9rem; 
-}
-
-.team-card a { 
-    color: var(--primary); 
-    text-decoration: none; 
-    font-weight: bold; 
-}
-
-/* ==========================================================================
-   6. مراجع التعلم والكتب (References Section)
-   ========================================================================== */
+/* 6. تنسيق مراجع الكتب والروابط */
 .ref-container {
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     gap: 20px;
-    margin-top: 15px;
-    background: var(--bg);
-    padding: 15px;
+    background: var(--bg); 
+    padding: 15px; 
     border-radius: 8px;
-    border: 1px solid var(--border);
 }
 
 .ref-img {
-    width: 70px;
-    height: auto;
-    border-radius: 4px;
+    width: 70px; height: auto;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .ref-link {
-    color: var(--primary);
-    text-decoration: none;
+    color: var(--primary); 
+    text-decoration: none; 
     font-weight: bold;
-}
-
-.ref-link:hover {
-    text-decoration: underline;
 }
